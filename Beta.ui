@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="SideMenu">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>110</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">   QFrame {
+    background-color: rgb(28, 28, 30);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="Button_Setting">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>200</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 18px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Button_Summary">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>20</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: rgba(80, 130, 80, 25);
+    border: 1px solid rgb(110, 190, 110);
+    border-radius: 18px;
+    color: rgb(150, 220, 140);
+}
+
+QPushButton:hover {
+    background-color: rgba(100, 180, 100, 35);
+    border: 1px solid rgb(140, 220, 130);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>35</width>
+       <height>35</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_SummaryIcon">
+     <property name="geometry">
+      <rect>
+       <x>39</x>
+       <y>35</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: rgb(130, 200, 120);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Modules/Assets/Icon/summaryv2.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_SettingsIcon">
+     <property name="geometry">
+      <rect>
+       <x>38</x>
+       <y>215</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Modules/Assets/Icon/cogv3.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_SettingsText">
+     <property name="geometry">
+      <rect>
+       <x>33</x>
+       <y>250</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: rgb(95, 95, 95);
+}</string>
+     </property>
+     <property name="text">
+      <string>Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_SummaryText_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: rgb(130, 200, 120);
+}</string>
+     </property>
+     <property name="text">
+      <string>Summary</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Button_Study">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>110</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 18px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_StudyIcon">
+     <property name="geometry">
+      <rect>
+       <x>38</x>
+       <y>127</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Modules/Assets/Icon/bookopenv2.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_StudyText">
+     <property name="geometry">
+      <rect>
+       <x>39</x>
+       <y>160</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: rgb(95, 95, 95);
+}</string>
+     </property>
+     <property name="text">
+      <string>Study</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="TopFrane">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>811</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+    background-color: rgb(28, 28, 33);
+    border-bottom: 1px solid rgb(50, 52, 55);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="Label_Leaf">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Modules/Assets/Icon/leafy-green.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_StudyBloom">
+     <property name="geometry">
+      <rect>
+       <x>38</x>
+       <y>12</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Inter</family>
+       <pointsize>10</pointsize>
+       <kerning>false</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: rgb(165, 165, 170);
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+}</string>
+     </property>
+     <property name="text">
+      <string>StudyBloom</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Button_Minimize">
+     <property name="geometry">
+      <rect>
+       <x>695</x>
+       <y>5</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Modules/Assets/Icon/minus.svg</normaloff>Modules/Assets/Icon/minus.svg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Buttom_Maximize">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>5</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Modules/Assets/Icon/expand.svg</normaloff>Modules/Assets/Icon/expand.svg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Buttom_Close">
+     <property name="geometry">
+      <rect>
+       <x>765</x>
+       <y>5</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+    background-color: rgb(196, 43, 28);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Modules/Assets/Icon/x.svg</normaloff>Modules/Assets/Icon/x.svg</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="MainMenu">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>40</y>
+      <width>691</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+    background-color: rgb(28, 28, 29);
+	border:none;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>671</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <widget class="QWidget" name="Page_Settings">
+      <widget class="QFrame" name="MainFrame_2">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>4</y>
+         <width>655</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame {
+    background-color: rgb(28, 28, 30);
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="Label_Welcome_5">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>10</y>
+          <width>351</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Inter</family>
+          <pointsize>20</pointsize>
+          <italic>false</italic>
+          <fontweight></fontweight>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 20pt;
+    font-weight: 550;
+    color: rgb(240, 240, 240);
+}</string>
+        </property>
+        <property name="text">
+         <string>Settings</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Label_SummaryText_3">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>35</y>
+          <width>401</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Inter</family>
+          <pointsize>8</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>Customize your StudyBloom experience</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="Frame_Profile">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>621</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(31, 32, 35);
+    border: 1px solid rgb(55, 57, 61);
+    border-radius: 14px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QFrame" name="CircularBackground_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>30</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(45, 55, 43);
+    border: none;
+    border-radius: 15px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Label_UserProfileIcon">
+          <property name="geometry">
+           <rect>
+            <x>4</x>
+            <y>5</y>
+            <width>21</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(118, 190, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Modules/Assets/Icon/user.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>17</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 12pt;
+    font-weight: 500;
+    color: rgb(137, 205, 101);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Profile</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>45</y>
+           <width>601</width>
+           <height>1</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(52, 54, 58);
+    border: none;
+    max-height: 1px;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SummaryText_4">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>47</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Username</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Entry_Name">
+         <property name="geometry">
+          <rect>
+           <x>490</x>
+           <y>60</y>
+           <width>113</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: rgb(25, 26, 28);
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 8px;
+
+    color: rgb(225, 225, 230);
+
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+QLineEdit:focus {
+    border: 1px solid rgb(137, 205, 101);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_Profile_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>190</y>
+          <width>621</width>
+          <height>291</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(31, 32, 35);
+    border: 1px solid rgb(55, 57, 61);
+    border-radius: 14px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="Line" name="line_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>43</y>
+           <width>601</width>
+           <height>1</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(52, 54, 58);
+    border: none;
+    max-height: 1px;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QFrame" name="CircularBackground_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>8</y>
+           <width>30</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(45, 55, 43);
+    border: none;
+    border-radius: 15px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Label_UserProfileIcon_2">
+          <property name="geometry">
+           <rect>
+            <x>4</x>
+            <y>5</y>
+            <width>21</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(118, 190, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Modules/Assets/Icon/leaf.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="Label_SectiontwoTitle">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>15</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 12pt;
+    font-weight: 500;
+    color: rgb(137, 205, 101);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Plant &amp; Pet</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SummaryText_5">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>45</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Show Desktop Plant</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SummaryText_6">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>80</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Always On Top</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SummaryText_7">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>150</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Plant Size</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SummaryText_8">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>115</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Remember Plant Position</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="CheckBox_ShowDesktopPlant">
+         <property name="geometry">
+          <rect>
+           <x>560</x>
+           <y>60</y>
+           <width>84</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox {
+    spacing: 0px;
+}
+
+QCheckBox::indicator {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+
+    background-color: rgb(65, 67, 72);
+    border: none;
+}
+
+QCheckBox::indicator:checked {
+    background-color: rgb(137, 205, 101);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="CheckBox_AlwaysOnTop">
+         <property name="geometry">
+          <rect>
+           <x>560</x>
+           <y>95</y>
+           <width>84</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox {
+    spacing: 0px;
+}
+
+QCheckBox::indicator {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+
+    background-color: rgb(65, 67, 72);
+    border: none;
+}
+
+QCheckBox::indicator:checked {
+    background-color: rgb(137, 205, 101);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="CheckBox_RememberPlantPosition">
+         <property name="geometry">
+          <rect>
+           <x>560</x>
+           <y>130</y>
+           <width>84</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox {
+    spacing: 0px;
+}
+
+QCheckBox::indicator {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+
+    background-color: rgb(65, 67, 72);
+    border: none;
+}
+
+QCheckBox::indicator:checked {
+    background-color: rgb(137, 205, 101);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="DropdownMenu_PlantSize">
+         <property name="geometry">
+          <rect>
+           <x>515</x>
+           <y>165</y>
+           <width>89</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+    background-color: rgb(25, 26, 28);
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 8px;
+
+    color: rgb(225, 225, 230);
+
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+
+    padding: 6px 10px;
+}
+
+QComboBox:hover {
+    border: 1px solid rgb(90, 95, 100);
+}
+
+QComboBox:focus {
+    border: 1px solid rgb(137, 205, 101);
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(31, 32, 35);
+    color: rgb(225, 225, 230);
+
+    border: 1px solid rgb(58, 60, 64);
+    selection-background-color: rgb(55, 72, 52);
+    selection-color: rgb(240, 240, 240);
+}</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Page_Summary">
+      <widget class="QFrame" name="MainFrame">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>4</y>
+         <width>655</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame {
+    background-color: rgb(28, 28, 30);
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="Label_Welcome">
+        <property name="geometry">
+         <rect>
+          <x>7</x>
+          <y>10</y>
+          <width>351</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Inter</family>
+          <pointsize>20</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 20pt;
+    font-weight: 700;
+    color: rgb(240, 240, 240);
+}</string>
+        </property>
+        <property name="text">
+         <string>Welcome, Jake</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Label_SummaryText">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>35</y>
+          <width>401</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Inter</family>
+          <pointsize>8</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>Here's your study summary for today</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="Frame_TodayStudyTime">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>151</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(36, 37, 40);
+
+    border: 1px solid rgb(62, 64, 68);
+    border-radius: 18px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_Subtext">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Today's Study Time</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyTimeValue">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>151</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(145, 201, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>2h 14</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyTimeIcon">
+         <property name="geometry">
+          <rect>
+           <x>115</x>
+           <y>8</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/clock.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_PointsEarnedToday">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>80</y>
+          <width>151</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(35, 36, 39);
+
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 16px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_SubText_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Points Earned Today</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_PointsEarnedValue">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>151</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(145, 201, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>300</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_PointImage">
+         <property name="geometry">
+          <rect>
+           <x>115</x>
+           <y>8</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/star.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_CurrentStreak">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>80</y>
+          <width>151</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(35, 36, 39);
+
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 16px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_SubText_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Current Streak</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_CurrentStreakValue">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>151</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(145, 201, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>23</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_PointImage_2">
+         <property name="geometry">
+          <rect>
+           <x>115</x>
+           <y>8</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/flame.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_SessionToday">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>80</y>
+          <width>151</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(35, 36, 39);
+
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 16px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_SubText_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Sessions Today</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SessionTodayValue">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>151</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(118, 190, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_PointImage_3">
+         <property name="geometry">
+          <rect>
+           <x>115</x>
+           <y>8</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/notepad-text.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_FavoriteSubject">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>170</y>
+          <width>191</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(35, 36, 39);
+
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 16px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_SubText_9">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>120</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Favorite Subject</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="CircularBackground">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>20</y>
+           <width>80</width>
+           <height>80</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(45, 55, 43);
+    border: none;
+    border-radius: 40px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Label_CurrentStreakValue_8">
+          <property name="geometry">
+           <rect>
+            <x>22</x>
+            <y>23</y>
+            <width>35</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(118, 190, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Modules/Assets/Icon/book-open-text.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="Label_Welcome_2">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>130</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>14</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 14pt;
+    font-weight: 700;
+    color: rgb(240, 240, 240);
+}</string>
+         </property>
+         <property name="text">
+          <string>Mathematics</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Framel_CurrentFlowerStage">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>170</y>
+          <width>221</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(35, 36, 39);
+
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 16px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_SubText_11">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>120</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Current Plant Stage</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="CircularBackground_2">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>20</y>
+           <width>80</width>
+           <height>80</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(45, 55, 43);
+    border: none;
+    border-radius: 40px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Label_CurrentStreakValue_9">
+          <property name="geometry">
+           <rect>
+            <x>18</x>
+            <y>18</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(118, 190, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Modules/Assets/Icon/sprout.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="Label_Welcome_3">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>130</y>
+           <width>181</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>14</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 14pt;
+    font-weight: 700;
+    color: rgb(240, 240, 240);
+}</string>
+         </property>
+         <property name="text">
+          <string>Flowering Plant</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_RecentSession">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>170</y>
+          <width>201</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(35, 36, 39);
+
+    border: 1px solid rgb(58, 60, 64);
+    border-radius: 16px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="Label_SubText_13">
+         <property name="geometry">
+          <rect>
+           <x>63</x>
+           <y>120</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 500;
+    color: rgb(145, 145, 155);
+
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Recent Session</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="CircularBackground_3">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>20</y>
+           <width>80</width>
+           <height>80</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(45, 55, 43);
+    border: none;
+    border-radius: 40px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Label_CurrentStreakValue_10">
+          <property name="geometry">
+           <rect>
+            <x>18</x>
+            <y>18</y>
+            <width>41</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 25pt;
+    font-weight: 700;
+    color: rgb(118, 190, 112);
+
+    background-color: transparent;
+    border: none;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>Modules/Assets/Icon/clipboard-clock.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="Label_Welcome_4">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>8</x>
+           <y>130</y>
+           <width>181</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>14</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 14pt;
+    font-weight: 700;
+    color: rgb(240, 240, 240);
+}</string>
+         </property>
+         <property name="text">
+          <string>Physics</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Page_Study"/>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
