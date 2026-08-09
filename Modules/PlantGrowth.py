@@ -1,52 +1,47 @@
-import json
-import os
+import json as _j
+from pathlib import Path as _P
+
 
 def add_animation(data):
     try:
-        json.dumps(data)
-    except (TypeError, ValueError) as error:
-        raise TypeError("Flag 3") from error
+        _j.dumps(data)
+    except (TypeError, ValueError) as e:
+        raise TypeError("Flag 3") from e
+    with open(_P(__file__).resolve().parent / "Saved_Animation.json", "w", encoding="utf-8") as f:
+        _j.dump(data, f, indent=4, ensure_ascii=False)
 
-    save_path = os.path.join(os.path.dirname(__file__), "Saved_Animation.json")
-    with open(save_path, "w", encoding="utf-8") as file:
-        json.dump(data, file, indent=4, ensure_ascii=False)
 
-class Animation:
-    def __init__(self):
-        self.Animation_Frames = []
-        self.Animation_index = 0
+class A:
+    def __init__(s):
+        s.f = []
+        s.i = 0
 
-    def create_animation(self, Animation_Frames, Animation_index):
-        if not Animation_Frames:
+    def set(s, frames, idx):
+        if not frames:
             raise ValueError("Flag 4")
-        if not 0 <= Animation_index < len(Animation_Frames):
+        if not 0 <= idx < len(frames):
             raise ValueError("Flag 4")
+        s.f = frames
+        s.i = idx
 
-        self.Animation_Frames = Animation_Frames
-        self.Animation_index = Animation_index
-
-    def _current_sprite(self):
-        if not self.Animation_Frames:
+    def _cur(s):
+        if not s.f:
             raise ValueError("Flag 5")
-        if not 0 <= self.Animation_index < len(self.Animation_Frames):
+        if not 0 <= s.i < len(s.f):
             raise IndexError("Flag 5")
-        return self.Animation_Frames[self.Animation_index]
+        return s.f[s.i]
 
-    def return_rect(self):
-        current_sprite = self._current_sprite()
-        return current_sprite.get_rect(center=(180, 225))
+    def rc(s):
+        return s._cur().get_rect(center=(180, 225))
 
-    def update_display(self, display):
-        current_sprite = self._current_sprite()
-        rect = self.return_rect()
+    def dr(s, d):
+        d.blit(s._cur(), s.rc())
 
-        display.blit(current_sprite, rect)
+    def ix(s):
+        return s.i
 
-    def return_index(self):
-        return self.Animation_index
-
-    def advance(self):
-        if self.Animation_index < len(self.Animation_Frames) - 1:
-            self.Animation_index += 1
+    def nxt(s):
+        if s.i < len(s.f) - 1:
+            s.i += 1
             return True
         return False

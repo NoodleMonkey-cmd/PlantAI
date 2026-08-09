@@ -1,66 +1,52 @@
-from Modules.Dragger import WindowDragger
-from Modules.PlantGrowth import Animation
-from Modules.PointSystem import PointSystem, Sprout
+from Modules.Dragger import WindowDragger as D
+from Modules.PlantGrowth import Animation as A
+from Modules.PointSystem import PointSystem as P, Sprout as S
+from Modules.SavingSystem import SavingSystem as V
 
-from pygame._sdl2 import Window
-import pygame
+from pathlib import Path as _P
+from pygame._sdl2 import Window as W
+import pygame, subprocess, sys
 
+U = str(_P(__file__).resolve().parent / "StudyUI.py")
 pygame.init()
-clock = pygame.time.Clock()
-
-display = pygame.display.set_mode((360, 450), pygame.NOFRAME)
-display.fill((255, 255, 255))
-from Modules.Asset_Loader import Sprout_animation
-
-window = Window.from_display_module()
-dragger = WindowDragger(window)
-
-animation_handler = Animation()
-animation_handler.create_animation(Sprout_animation, 0)
-
-if len(Sprout) != len(Sprout_animation) - 1:
+ck = pygame.time.Clock()
+dp = pygame.display.set_mode((360, 450), pygame.NOFRAME)
+dp.fill((255, 255, 255))
+from Modules.Asset_Loader import Sprout_animation as SA
+wn = W.from_display_module()
+dg = D(wn)
+an = A()
+an.set(SA, 0)
+if len(S) != len(SA) - 1:
     raise ValueError("Flag 7")
-
-point_system = PointSystem()
-
-running = True
-while running:
-    sprite_rect = animation_handler.return_rect()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1 and sprite_rect.collidepoint(event.pos):
-               dragger.start_dragging()
-
-        elif event.type == pygame.MOUSEBUTTONUP:
-            if event.button == 1:
-                dragger.stop_dragging()
-
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                point_system.add_point(100)
-
-                # Point system
-                growth_index = animation_handler.return_index()
-                if 0 <= growth_index < len(Sprout):
-                    required_points = Sprout[growth_index]
-                    if point_system.points >= required_points:
-                        animation_handler.advance()
-
-    if not running:
+ps = P()
+c = 0
+v = V(an, ps)
+v.ld()
+run = True
+while run:
+    r = an.rc()
+    for ev in pygame.event.get():
+        if ev.type == pygame.QUIT:
+            run = False
+        elif ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1 and r.collidepoint(ev.pos):
+            dg.grab()
+            c = (c + 1) % 5
+            if not c:
+                subprocess.Popen([sys.executable, U])
+        elif ev.type == pygame.MOUSEBUTTONUP and ev.button == 1:
+            dg.drop()
+        elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_SPACE:
+            ps.ap(100)
+            i = an.ix()
+            if 0 <= i < len(S) and ps.pts >= S[i]:
+                an.nxt()
+    if not run:
         break
-
-    dragger.update()
-
-    # Clear
-    display.fill((255, 255, 255))
-
-    # Animations
-    animation_handler.update_display(display)
-
+    dg.tick()
+    dp.fill((255, 255, 255))
+    an.dr(dp)
     pygame.display.flip()
-    clock.tick(60)
-
+    ck.tick(60)
 pygame.quit()
+v.sv()
