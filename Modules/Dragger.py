@@ -1,33 +1,35 @@
 import ctypes
-import sys as _sys
+import sys
 from ctypes.wintypes import POINT
 
-
-class D:
-    def __init__(s, w):
-        if _sys.platform != "win32":
+class WindowDragger:
+    def __init__(self, window):
+        if sys.platform != "win32":
             raise OSError("WindowDragger requires Windows")
-        s.w = w
-        s.g = False
-        s.o = (0, 0)
-        s.u = ctypes.windll.user32
+        self.window = window
+        self.dragging = False
+        self.offset = (0, 0)
+        self.user32 = ctypes.windll.user32
 
-    def mpos(s):
-        p = POINT()
-        if not s.u.GetCursorPos(ctypes.byref(p)):
+    def get_global_mouse_position(self):
+        point = POINT()
+        if not self.user32.GetCursorPos(ctypes.byref(point)):
             raise ctypes.WinError()
-        return p.x, p.y
+        return point.x, point.y
 
-    def grab(s):
-        mx, my = s.mpos()
-        wx, wy = s.w.position
-        s.o = (mx - wx, my - wy)
-        s.g = True
+    def start_dragging(self):
+        global_mouse_x, global_mouse_y = self.get_global_mouse_position()
+        window_x, window_y = self.window.position
+        self.offset = (global_mouse_x - window_x, global_mouse_y - window_y)
+        self.dragging = True
 
-    def drop(s):
-        s.g = False
+    def stop_dragging(self):
+        self.dragging = False
 
-    def tick(s):
-        if s.g:
-            mx, my = s.mpos()
-            s.w.position = (mx - s.o[0], my - s.o[1])
+    def update(self):
+        if self.dragging:
+            global_mouse_x, global_mouse_y = self.get_global_mouse_position()
+            self.window.position = (
+                global_mouse_x - self.offset[0],
+                global_mouse_y - self.offset[1],
+            )

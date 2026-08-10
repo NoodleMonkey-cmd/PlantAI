@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
     QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QStatusBar, QWidget)
+    QSizePolicy, QStackedWidget, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.SideMenu.setFrameShadow(QFrame.Shadow.Raised)
         self.Button_Setting = QPushButton(self.SideMenu)
         self.Button_Setting.setObjectName(u"Button_Setting")
-        self.Button_Setting.setGeometry(QRect(14, 110, 81, 81))
+        self.Button_Setting.setGeometry(QRect(14, 200, 81, 81))
         self.Button_Setting.setStyleSheet(u"QPushButton {\n"
 "    border: 1px solid rgb(95, 95, 95);\n"
 "    border-radius: 18px;\n"
@@ -69,12 +69,12 @@ class Ui_MainWindow(object):
         self.Label_SummaryIcon.setScaledContents(True)
         self.Label_SettingsIcon = QLabel(self.SideMenu)
         self.Label_SettingsIcon.setObjectName(u"Label_SettingsIcon")
-        self.Label_SettingsIcon.setGeometry(QRect(39, 125, 31, 31))
+        self.Label_SettingsIcon.setGeometry(QRect(38, 215, 31, 31))
         self.Label_SettingsIcon.setPixmap(QPixmap(u"Modules/Assets/Icon/cogv3.svg"))
         self.Label_SettingsIcon.setScaledContents(True)
         self.Label_SettingsText = QLabel(self.SideMenu)
         self.Label_SettingsText.setObjectName(u"Label_SettingsText")
-        self.Label_SettingsText.setGeometry(QRect(34, 160, 51, 16))
+        self.Label_SettingsText.setGeometry(QRect(33, 250, 51, 16))
         self.Label_SettingsText.setStyleSheet(u"QLabel {\n"
 "    color: rgb(95, 95, 95);\n"
 "}")
@@ -83,6 +83,25 @@ class Ui_MainWindow(object):
         self.Label_SummaryText_2.setGeometry(QRect(30, 70, 51, 16))
         self.Label_SummaryText_2.setStyleSheet(u"QLabel {\n"
 "    color: rgb(130, 200, 120);\n"
+"}")
+        self.Button_Study = QPushButton(self.SideMenu)
+        self.Button_Study.setObjectName(u"Button_Study")
+        self.Button_Study.setGeometry(QRect(14, 110, 81, 81))
+        self.Button_Study.setStyleSheet(u"QPushButton {\n"
+"    border: 1px solid rgb(95, 95, 95);\n"
+"    border-radius: 18px;\n"
+"}")
+        self.Button_Study.setIconSize(QSize(20, 20))
+        self.Label_StudyIcon = QLabel(self.SideMenu)
+        self.Label_StudyIcon.setObjectName(u"Label_StudyIcon")
+        self.Label_StudyIcon.setGeometry(QRect(38, 127, 31, 31))
+        self.Label_StudyIcon.setPixmap(QPixmap(u"Modules/Assets/Icon/bookopenv2.svg"))
+        self.Label_StudyIcon.setScaledContents(True)
+        self.Label_StudyText = QLabel(self.SideMenu)
+        self.Label_StudyText.setObjectName(u"Label_StudyText")
+        self.Label_StudyText.setGeometry(QRect(39, 160, 51, 16))
+        self.Label_StudyText.setStyleSheet(u"QLabel {\n"
+"    color: rgb(95, 95, 95);\n"
 "}")
         self.TopFrane = QFrame(self.centralwidget)
         self.TopFrane.setObjectName(u"TopFrane")
@@ -156,7 +175,7 @@ class Ui_MainWindow(object):
         self.MainFrame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.Label_Welcome_5 = QLabel(self.MainFrame_2)
         self.Label_Welcome_5.setObjectName(u"Label_Welcome_5")
-        self.Label_Welcome_5.setGeometry(QRect(10, 10, 351, 41))
+        self.Label_Welcome_5.setGeometry(QRect(14, 10, 351, 41))
         font1 = QFont()
         font1.setFamilies([u"Inter"])
         font1.setPointSize(20)
@@ -911,10 +930,481 @@ class Ui_MainWindow(object):
 "}")
         self.Label_Welcome_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.stackedWidget.addWidget(self.Page_Summary)
+        self.Page_Study = QWidget()
+        self.Page_Study.setObjectName(u"Page_Study")
+        self.MainFrame_3 = QFrame(self.Page_Study)
+        self.MainFrame_3.setObjectName(u"MainFrame_3")
+        self.MainFrame_3.setGeometry(QRect(9, 4, 655, 501))
+        self.MainFrame_3.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(28, 28, 30);\n"
+"}")
+        self.MainFrame_3.setFrameShape(QFrame.Shape.StyledPanel)
+        self.MainFrame_3.setFrameShadow(QFrame.Shadow.Raised)
+        self.Label_Sub = QLabel(self.MainFrame_3)
+        self.Label_Sub.setObjectName(u"Label_Sub")
+        self.Label_Sub.setGeometry(QRect(11, 10, 351, 41))
+        self.Label_Sub.setFont(font1)
+        self.Label_Sub.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 20pt;\n"
+"    font-weight: 550;\n"
+"    color: rgb(240, 240, 240);\n"
+"}")
+        self.Label_StudyLabel = QLabel(self.MainFrame_3)
+        self.Label_StudyLabel.setObjectName(u"Label_StudyLabel")
+        self.Label_StudyLabel.setGeometry(QRect(11, 35, 401, 51))
+        self.Label_StudyLabel.setFont(font2)
+        self.Label_StudyLabel.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Frame_StudySession = QFrame(self.MainFrame_3)
+        self.Frame_StudySession.setObjectName(u"Frame_StudySession")
+        self.Frame_StudySession.setGeometry(QRect(10, 80, 281, 181))
+        self.Frame_StudySession.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(27, 29, 34);\n"
+"    border: 1px solid rgb(45, 48, 55);\n"
+"    border-radius: 14px;\n"
+"}")
+        self.Frame_StudySession.setFrameShape(QFrame.Shape.StyledPanel)
+        self.Frame_StudySession.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_SessionSetupIcon = QLabel(self.Frame_StudySession)
+        self.label_SessionSetupIcon.setObjectName(u"label_SessionSetupIcon")
+        self.label_SessionSetupIcon.setGeometry(QRect(10, 10, 21, 21))
+        self.label_SessionSetupIcon.setStyleSheet(u"QLabel {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.label_SessionSetupIcon.setPixmap(QPixmap(u"Modules/Assets/Icon/sliders-horizontal.svg"))
+        self.label_SessionSetupIcon.setScaledContents(True)
+        self.label_SessionSetupText = QLabel(self.Frame_StudySession)
+        self.label_SessionSetupText.setObjectName(u"label_SessionSetupText")
+        self.label_SessionSetupText.setGeometry(QRect(39, 12, 121, 16))
+        self.label_SessionSetupText.setStyleSheet(u"QLabel {\n"
+"	color: rgb(137, 205, 101);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.line_7 = QFrame(self.Frame_StudySession)
+        self.line_7.setObjectName(u"line_7")
+        self.line_7.setGeometry(QRect(10, 38, 259, 1))
+        self.line_7.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(52, 54, 58);\n"
+"    border: none;\n"
+"    max-height: 1px;\n"
+"}")
+        self.line_7.setFrameShape(QFrame.Shape.HLine)
+        self.line_7.setFrameShadow(QFrame.Shadow.Sunken)
+        self.Label_StudyLabel_2 = QLabel(self.Frame_StudySession)
+        self.Label_StudyLabel_2.setObjectName(u"Label_StudyLabel_2")
+        self.Label_StudyLabel_2.setGeometry(QRect(11, 30, 401, 51))
+        self.Label_StudyLabel_2.setFont(font2)
+        self.Label_StudyLabel_2.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.comboBox_subject = QComboBox(self.Frame_StudySession)
+        self.comboBox_subject.setObjectName(u"comboBox_subject")
+        self.comboBox_subject.setGeometry(QRect(10, 70, 211, 26))
+        self.comboBox_subject.setStyleSheet(u"QComboBox {\n"
+"    background-color: rgb(23, 25, 30);\n"
+"    color: rgb(225, 227, 232);\n"
+"\n"
+"    border: 1px solid rgb(48, 51, 58);\n"
+"    border-radius: 8px;\n"
+"\n"
+"    padding: 7px 12px;\n"
+"\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 11pt;\n"
+"    font-weight: 400;\n"
+"}\n"
+"\n"
+"QComboBox:hover {\n"
+"    border: 1px solid rgb(65, 69, 76);\n"
+"}\n"
+"\n"
+"QComboBox:focus {\n"
+"    border: 1px solid rgb(137, 205, 101);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 30px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: rgb(27, 29, 34);\n"
+"    color: rgb(225, 227, 232);\n"
+"\n"
+"    border: 1px solid rgb(48, 51, 58);\n"
+"    outline: none;\n"
+"\n"
+"    selection-background-color: rgb(42, 55, 40);\n"
+"    selection-color: rgb(137, 205, 101);\n"
+"\n"
+"    padding: 5px;\n"
+"}")
+        self.Label_StudyLabel_3 = QLabel(self.Frame_StudySession)
+        self.Label_StudyLabel_3.setObjectName(u"Label_StudyLabel_3")
+        self.Label_StudyLabel_3.setGeometry(QRect(11, 90, 401, 51))
+        self.Label_StudyLabel_3.setFont(font2)
+        self.Label_StudyLabel_3.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Lineedit_SessionLength = QLineEdit(self.Frame_StudySession)
+        self.Lineedit_SessionLength.setObjectName(u"Lineedit_SessionLength")
+        self.Lineedit_SessionLength.setGeometry(QRect(10, 130, 211, 26))
+        self.Lineedit_SessionLength.setStyleSheet(u"QLineEdit {\n"
+"    background-color: rgb(23, 25, 30);\n"
+"    color: rgb(225, 227, 232);\n"
+"\n"
+"    border: 1px solid rgb(48, 51, 58);\n"
+"    border-radius: 8px;\n"
+"\n"
+"    padding: 7px 12px;\n"
+"\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 11pt;\n"
+"    font-weight: 400;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    border: 1px solid rgb(65, 69, 76);\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid rgb(137, 205, 101);\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    color: rgb(110, 113, 120);\n"
+"    background-color: rgb(27, 29, 33);\n"
+"}")
+        self.Frame_Timer = QFrame(self.MainFrame_3)
+        self.Frame_Timer.setObjectName(u"Frame_Timer")
+        self.Frame_Timer.setGeometry(QRect(310, 80, 321, 261))
+        self.Frame_Timer.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(27, 29, 34);\n"
+"    border: 1px solid rgb(45, 48, 55);\n"
+"    border-radius: 14px;\n"
+"}")
+        self.Frame_Timer.setFrameShape(QFrame.Shape.StyledPanel)
+        self.Frame_Timer.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_SessionSetupIcon_3 = QLabel(self.Frame_Timer)
+        self.label_SessionSetupIcon_3.setObjectName(u"label_SessionSetupIcon_3")
+        self.label_SessionSetupIcon_3.setGeometry(QRect(10, 10, 21, 21))
+        self.label_SessionSetupIcon_3.setStyleSheet(u"QLabel {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.label_SessionSetupIcon_3.setPixmap(QPixmap(u"Modules/Assets/Icon/clipboard-clock.svg"))
+        self.label_SessionSetupIcon_3.setScaledContents(True)
+        self.label_SessionSetupText_3 = QLabel(self.Frame_Timer)
+        self.label_SessionSetupText_3.setObjectName(u"label_SessionSetupText_3")
+        self.label_SessionSetupText_3.setGeometry(QRect(39, 12, 121, 16))
+        self.label_SessionSetupText_3.setStyleSheet(u"QLabel {\n"
+"	color: rgb(137, 205, 101);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_Hour = QLabel(self.Frame_Timer)
+        self.Label_Hour.setObjectName(u"Label_Hour")
+        self.Label_Hour.setGeometry(QRect(45, 30, 351, 81))
+        font6 = QFont()
+        font6.setFamilies([u"Segoe UI"])
+        font6.setPointSize(48)
+        font6.setBold(False)
+        font6.setItalic(False)
+        self.Label_Hour.setFont(font6)
+        self.Label_Hour.setStyleSheet(u"QLabel {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_Minute = QLabel(self.Frame_Timer)
+        self.Label_Minute.setObjectName(u"Label_Minute")
+        self.Label_Minute.setGeometry(QRect(125, 30, 351, 81))
+        self.Label_Minute.setFont(font6)
+        self.Label_Minute.setStyleSheet(u"QLabel {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_Second = QLabel(self.Frame_Timer)
+        self.Label_Second.setObjectName(u"Label_Second")
+        self.Label_Second.setGeometry(QRect(205, 30, 351, 81))
+        self.Label_Second.setFont(font6)
+        self.Label_Second.setStyleSheet(u"QLabel {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_SmallTimeLimit = QLabel(self.Frame_Timer)
+        self.Label_SmallTimeLimit.setObjectName(u"Label_SmallTimeLimit")
+        self.Label_SmallTimeLimit.setGeometry(QRect(120, 115, 83, 20))
+        self.Label_SmallTimeLimit.setMinimumSize(QSize(83, 20))
+        self.Label_SmallTimeLimit.setMaximumSize(QSize(83, 20))
+        font7 = QFont()
+        font7.setFamilies([u"Inter"])
+        font7.setPointSize(10)
+        font7.setWeight(QFont.Medium)
+        font7.setItalic(False)
+        self.Label_SmallTimeLimit.setFont(font7)
+        self.Label_SmallTimeLimit.setStyleSheet(u"QLabel {\n"
+"    background-color: rgb(42, 55, 40);\n"
+"    color: rgb(137, 205, 101);\n"
+"\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: 500;\n"
+"\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"}")
+        self.Label_SmallTimeLimit.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.Button_StartSession = QPushButton(self.Frame_Timer)
+        self.Button_StartSession.setObjectName(u"Button_StartSession")
+        self.Button_StartSession.setGeometry(QRect(35, 149, 261, 51))
+        self.Button_StartSession.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgb(137, 205, 101);\n"
+"    color: rgb(20, 24, 20);\n"
+"\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 11pt;\n"
+"    font-weight: 600;\n"
+"\n"
+"    padding: 10px 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(151, 218, 114);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(118, 183, 84);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: rgb(65, 72, 63);\n"
+"    color: rgb(125, 130, 123);\n"
+"}")
+        self.Label_StartSessionIcon = QLabel(self.Frame_Timer)
+        self.Label_StartSessionIcon.setObjectName(u"Label_StartSessionIcon")
+        self.Label_StartSessionIcon.setGeometry(QRect(100, 160, 31, 31))
+        self.Label_StartSessionIcon.setStyleSheet(u"QLabel {\n"
+"	border: None;\n"
+"	background-color: transparent;\n"
+"}")
+        self.Label_StartSessionIcon.setPixmap(QPixmap(u"Modules/Assets/Icon/play.svg"))
+        self.Button_RestartSession = QPushButton(self.Frame_Timer)
+        self.Button_RestartSession.setObjectName(u"Button_RestartSession")
+        self.Button_RestartSession.setGeometry(QRect(50, 210, 231, 41))
+        self.Button_RestartSession.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgb(27, 29, 34);\n"
+"    color: rgb(170, 173, 184);\n"
+"\n"
+"    border: 1px solid rgb(55, 58, 64);\n"
+"    border-radius: 10px;\n"
+"\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 11pt;\n"
+"    font-weight: 500;\n"
+"\n"
+"    padding: 10px 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(34, 37, 42);\n"
+"    color: rgb(225, 227, 232);\n"
+"    border: 1px solid rgb(75, 79, 86);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(22, 24, 28);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    color: rgb(90, 93, 100);\n"
+"    border: 1px solid rgb(45, 47, 52);\n"
+"}")
+        self.Label_RestartSessionIcon = QLabel(self.Frame_Timer)
+        self.Label_RestartSessionIcon.setObjectName(u"Label_RestartSessionIcon")
+        self.Label_RestartSessionIcon.setGeometry(QRect(120, 220, 41, 21))
+        self.Label_RestartSessionIcon.setStyleSheet(u"QLabel {\n"
+"	border: None;\n"
+"	background-color: transparent;\n"
+"}")
+        self.Label_RestartSessionIcon.setPixmap(QPixmap(u"Modules/Assets/Icon/rotate-ccw2.svg"))
+        self.Frame_SessionOverview = QFrame(self.MainFrame_3)
+        self.Frame_SessionOverview.setObjectName(u"Frame_SessionOverview")
+        self.Frame_SessionOverview.setGeometry(QRect(10, 280, 281, 201))
+        self.Frame_SessionOverview.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(27, 29, 34);\n"
+"    border: 1px solid rgb(45, 48, 55);\n"
+"    border-radius: 14px;\n"
+"}")
+        self.Frame_SessionOverview.setFrameShape(QFrame.Shape.StyledPanel)
+        self.Frame_SessionOverview.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_SessionSetupText_5 = QLabel(self.Frame_SessionOverview)
+        self.label_SessionSetupText_5.setObjectName(u"label_SessionSetupText_5")
+        self.label_SessionSetupText_5.setGeometry(QRect(39, 12, 121, 16))
+        self.label_SessionSetupText_5.setStyleSheet(u"QLabel {\n"
+"	color: rgb(137, 205, 101);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.line_10 = QFrame(self.Frame_SessionOverview)
+        self.line_10.setObjectName(u"line_10")
+        self.line_10.setGeometry(QRect(10, 38, 259, 1))
+        self.line_10.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(52, 54, 58);\n"
+"    border: none;\n"
+"    max-height: 1px;\n"
+"}")
+        self.line_10.setFrameShape(QFrame.Shape.HLine)
+        self.line_10.setFrameShadow(QFrame.Shadow.Sunken)
+        self.label_SessionSetupIcon_5 = QLabel(self.Frame_SessionOverview)
+        self.label_SessionSetupIcon_5.setObjectName(u"label_SessionSetupIcon_5")
+        self.label_SessionSetupIcon_5.setGeometry(QRect(10, 10, 21, 21))
+        self.label_SessionSetupIcon_5.setStyleSheet(u"QLabel {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.label_SessionSetupIcon_5.setPixmap(QPixmap(u"Modules/Assets/Icon/folder-kanban.svg"))
+        self.label_SessionSetupIcon_5.setScaledContents(True)
+        self.Label_StudyLabel_8 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_8.setObjectName(u"Label_StudyLabel_8")
+        self.Label_StudyLabel_8.setGeometry(QRect(10, 30, 401, 51))
+        self.Label_StudyLabel_8.setFont(font3)
+        self.Label_StudyLabel_8.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StudyLabel_9 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_9.setObjectName(u"Label_StudyLabel_9")
+        self.Label_StudyLabel_9.setGeometry(QRect(10, 60, 401, 51))
+        self.Label_StudyLabel_9.setFont(font3)
+        self.Label_StudyLabel_9.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StudyLabel_10 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_10.setObjectName(u"Label_StudyLabel_10")
+        self.Label_StudyLabel_10.setGeometry(QRect(10, 90, 401, 51))
+        self.Label_StudyLabel_10.setFont(font3)
+        self.Label_StudyLabel_10.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StudyLabel_11 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_11.setObjectName(u"Label_StudyLabel_11")
+        self.Label_StudyLabel_11.setGeometry(QRect(10, 120, 401, 51))
+        self.Label_StudyLabel_11.setFont(font3)
+        self.Label_StudyLabel_11.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StartSessionIcon_2 = QLabel(self.Frame_SessionOverview)
+        self.Label_StartSessionIcon_2.setObjectName(u"Label_StartSessionIcon_2")
+        self.Label_StartSessionIcon_2.setGeometry(QRect(190, 51, 10, 10))
+        self.Label_StartSessionIcon_2.setStyleSheet(u"QLabel {\n"
+"	border: None;\n"
+"	background-color: transparent;\n"
+"}")
+        self.Label_StartSessionIcon_2.setPixmap(QPixmap(u"Modules/Assets/Icon/circle-check.svg"))
+        self.Label_StartSessionIcon_2.setScaledContents(True)
+        self.Label_StudyLabel_12 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_12.setObjectName(u"Label_StudyLabel_12")
+        self.Label_StudyLabel_12.setGeometry(QRect(205, 30, 401, 51))
+        self.Label_StudyLabel_12.setFont(font2)
+        self.Label_StudyLabel_12.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StudyLabel_13 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_13.setObjectName(u"Label_StudyLabel_13")
+        self.Label_StudyLabel_13.setGeometry(QRect(240, 60, 401, 51))
+        self.Label_StudyLabel_13.setFont(font2)
+        self.Label_StudyLabel_13.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StudyLabel_14 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_14.setObjectName(u"Label_StudyLabel_14")
+        self.Label_StudyLabel_14.setGeometry(QRect(220, 90, 401, 51))
+        self.Label_StudyLabel_14.setFont(font2)
+        self.Label_StudyLabel_14.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StudyLabel_15 = QLabel(self.Frame_SessionOverview)
+        self.Label_StudyLabel_15.setObjectName(u"Label_StudyLabel_15")
+        self.Label_StudyLabel_15.setGeometry(QRect(250, 120, 401, 51))
+        self.Label_StudyLabel_15.setFont(font2)
+        self.Label_StudyLabel_15.setStyleSheet(u"QLabel {\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 8pt;\n"
+"    font-weight: 400;\n"
+"    color: rgb(135, 135, 145);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.Label_StartSessionIcon_3 = QLabel(self.Frame_SessionOverview)
+        self.Label_StartSessionIcon_3.setObjectName(u"Label_StartSessionIcon_3")
+        self.Label_StartSessionIcon_3.setGeometry(QRect(260, 141, 10, 10))
+        self.Label_StartSessionIcon_3.setStyleSheet(u"QLabel {\n"
+"	border: None;\n"
+"	background-color: transparent;\n"
+"}")
+        self.Label_StartSessionIcon_3.setPixmap(QPixmap(u"Modules/Assets/Icon/broccoli.svg"))
+        self.Label_StartSessionIcon_3.setScaledContents(True)
+        self.stackedWidget.addWidget(self.Page_Study)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
 
@@ -929,6 +1419,9 @@ class Ui_MainWindow(object):
         self.Label_SettingsIcon.setText("")
         self.Label_SettingsText.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.Label_SummaryText_2.setText(QCoreApplication.translate("MainWindow", u"Summary", None))
+        self.Button_Study.setText("")
+        self.Label_StudyIcon.setText("")
+        self.Label_StudyText.setText(QCoreApplication.translate("MainWindow", u"Study", None))
         self.Label_Leaf.setText("")
         self.Label_StudyBloom.setText(QCoreApplication.translate("MainWindow", u"StudyBloom", None))
         self.Button_Minimize.setText("")
@@ -972,5 +1465,33 @@ class Ui_MainWindow(object):
         self.Label_SubText_13.setText(QCoreApplication.translate("MainWindow", u"Recent Session", None))
         self.Label_CurrentStreakValue_10.setText("")
         self.Label_Welcome_4.setText(QCoreApplication.translate("MainWindow", u"Physics", None))
+        self.Label_Sub.setText(QCoreApplication.translate("MainWindow", u"Study", None))
+        self.Label_StudyLabel.setText(QCoreApplication.translate("MainWindow", u"Focus, grow, and bloom.", None))
+        self.label_SessionSetupIcon.setText("")
+        self.label_SessionSetupText.setText(QCoreApplication.translate("MainWindow", u"Session Setup", None))
+        self.Label_StudyLabel_2.setText(QCoreApplication.translate("MainWindow", u"Subject:", None))
+        self.Label_StudyLabel_3.setText(QCoreApplication.translate("MainWindow", u"Session Length:", None))
+        self.label_SessionSetupIcon_3.setText("")
+        self.label_SessionSetupText_3.setText(QCoreApplication.translate("MainWindow", u"Timer", None))
+        self.Label_Hour.setText(QCoreApplication.translate("MainWindow", u"00:", None))
+        self.Label_Minute.setText(QCoreApplication.translate("MainWindow", u"00:", None))
+        self.Label_Second.setText(QCoreApplication.translate("MainWindow", u"00", None))
+        self.Label_SmallTimeLimit.setText(QCoreApplication.translate("MainWindow", u"25 minutes", None))
+        self.Button_StartSession.setText(QCoreApplication.translate("MainWindow", u"      Start Session", None))
+        self.Label_StartSessionIcon.setText("")
+        self.Button_RestartSession.setText(QCoreApplication.translate("MainWindow", u"   Restart", None))
+        self.Label_RestartSessionIcon.setText("")
+        self.label_SessionSetupText_5.setText(QCoreApplication.translate("MainWindow", u"Session Overview", None))
+        self.label_SessionSetupIcon_5.setText("")
+        self.Label_StudyLabel_8.setText(QCoreApplication.translate("MainWindow", u"Status", None))
+        self.Label_StudyLabel_9.setText(QCoreApplication.translate("MainWindow", u"Focus Time Today", None))
+        self.Label_StudyLabel_10.setText(QCoreApplication.translate("MainWindow", u"Sessions Today", None))
+        self.Label_StudyLabel_11.setText(QCoreApplication.translate("MainWindow", u"Total Points Earned Today", None))
+        self.Label_StartSessionIcon_2.setText("")
+        self.Label_StudyLabel_12.setText(QCoreApplication.translate("MainWindow", u"Not studying", None))
+        self.Label_StudyLabel_13.setText(QCoreApplication.translate("MainWindow", u"0 min", None))
+        self.Label_StudyLabel_14.setText(QCoreApplication.translate("MainWindow", u"0 sessions", None))
+        self.Label_StudyLabel_15.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.Label_StartSessionIcon_3.setText("")
     # retranslateUi
 

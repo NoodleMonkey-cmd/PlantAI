@@ -960,6 +960,9 @@ QCheckBox::indicator:checked {
          <property name="text">
           <string/>
          </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
         </widget>
         <widget class="QCheckBox" name="CheckBox_AlwaysOnTop">
          <property name="geometry">
@@ -2020,7 +2023,1043 @@ QComboBox QAbstractItemView {
        </widget>
       </widget>
      </widget>
-     <widget class="QWidget" name="Page_Study"/>
+     <widget class="QWidget" name="Page_Study">
+      <widget class="QFrame" name="MainFrame_3">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>4</y>
+         <width>655</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame {
+    background-color: rgb(28, 28, 30);
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="Label_Sub">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>10</y>
+          <width>351</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Inter</family>
+          <pointsize>20</pointsize>
+          <italic>false</italic>
+          <fontweight></fontweight>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 20pt;
+    font-weight: 550;
+    color: rgb(240, 240, 240);
+}</string>
+        </property>
+        <property name="text">
+         <string>Study</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Label_StudyLabel">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>35</y>
+          <width>401</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Inter</family>
+          <pointsize>8</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>Focus, grow, and bloom.</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="Frame_StudySession">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>281</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(27, 29, 34);
+    border: 1px solid rgb(45, 48, 55);
+    border-radius: 14px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_SessionSetupIcon">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/sliders-horizontal.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_SessionSetupText">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>12</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	color: rgb(137, 205, 101);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Session Setup</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_7">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>38</y>
+           <width>259</width>
+           <height>1</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(52, 54, 58);
+    border: none;
+    max-height: 1px;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>30</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>8</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Subject:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_subject">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>211</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+    background-color: rgb(23, 25, 30);
+    color: rgb(225, 227, 232);
+
+    border: 1px solid rgb(48, 51, 58);
+    border-radius: 8px;
+
+    padding: 7px 12px;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 11pt;
+    font-weight: 400;
+}
+
+QComboBox:hover {
+    border: 1px solid rgb(65, 69, 76);
+}
+
+QComboBox:focus {
+    border: 1px solid rgb(137, 205, 101);
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 30px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(27, 29, 34);
+    color: rgb(225, 227, 232);
+
+    border: 1px solid rgb(48, 51, 58);
+    outline: none;
+
+    selection-background-color: rgb(42, 55, 40);
+    selection-color: rgb(137, 205, 101);
+
+    padding: 5px;
+}</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_3">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>90</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>8</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Session Length:</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Lineedit_SessionLength">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>130</y>
+           <width>211</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: rgb(23, 25, 30);
+    color: rgb(225, 227, 232);
+
+    border: 1px solid rgb(48, 51, 58);
+    border-radius: 8px;
+
+    padding: 7px 12px;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 11pt;
+    font-weight: 400;
+}
+
+QLineEdit:hover {
+    border: 1px solid rgb(65, 69, 76);
+}
+
+QLineEdit:focus {
+    border: 1px solid rgb(137, 205, 101);
+}
+
+QLineEdit:disabled {
+    color: rgb(110, 113, 120);
+    background-color: rgb(27, 29, 33);
+}</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_Timer">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>80</y>
+          <width>321</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(27, 29, 34);
+    border: 1px solid rgb(45, 48, 55);
+    border-radius: 14px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_SessionSetupIcon_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/clipboard-clock.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_SessionSetupText_3">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>12</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	color: rgb(137, 205, 101);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Timer</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_Hour">
+         <property name="geometry">
+          <rect>
+           <x>45</x>
+           <y>30</y>
+           <width>351</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>48</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>00:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_Minute">
+         <property name="geometry">
+          <rect>
+           <x>125</x>
+           <y>30</y>
+           <width>351</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>48</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>00:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_Second">
+         <property name="geometry">
+          <rect>
+           <x>205</x>
+           <y>30</y>
+           <width>351</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>48</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>00</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_SmallTimeLimit">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>115</y>
+           <width>83</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>83</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>83</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <fontweight>Medium</fontweight>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: rgb(42, 55, 40);
+    color: rgb(137, 205, 101);
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 500;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}</string>
+         </property>
+         <property name="text">
+          <string>25 minutes</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="Button_StartSession">
+         <property name="geometry">
+          <rect>
+           <x>35</x>
+           <y>149</y>
+           <width>261</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgb(137, 205, 101);
+    color: rgb(20, 24, 20);
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 11pt;
+    font-weight: 600;
+
+    padding: 10px 20px;
+}
+
+QPushButton:hover {
+    background-color: rgb(151, 218, 114);
+}
+
+QPushButton:pressed {
+    background-color: rgb(118, 183, 84);
+}
+
+QPushButton:disabled {
+    background-color: rgb(65, 72, 63);
+    color: rgb(125, 130, 123);
+}</string>
+         </property>
+         <property name="text">
+          <string>      Start Session</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StartSessionIcon">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>160</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: None;
+	background-color: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/play.svg</pixmap>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="Button_RestartSession">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>210</y>
+           <width>231</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgb(27, 29, 34);
+    color: rgb(170, 173, 184);
+
+    border: 1px solid rgb(55, 58, 64);
+    border-radius: 10px;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 11pt;
+    font-weight: 500;
+
+    padding: 10px 20px;
+}
+
+QPushButton:hover {
+    background-color: rgb(34, 37, 42);
+    color: rgb(225, 227, 232);
+    border: 1px solid rgb(75, 79, 86);
+}
+
+QPushButton:pressed {
+    background-color: rgb(22, 24, 28);
+}
+
+QPushButton:disabled {
+    color: rgb(90, 93, 100);
+    border: 1px solid rgb(45, 47, 52);
+}</string>
+         </property>
+         <property name="text">
+          <string>   Restart</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_RestartSessionIcon">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>220</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: None;
+	background-color: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/rotate-ccw2.svg</pixmap>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="Frame_SessionOverview">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>280</y>
+          <width>281</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    background-color: rgb(27, 29, 34);
+    border: 1px solid rgb(45, 48, 55);
+    border-radius: 14px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_SessionSetupText_5">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>12</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	color: rgb(137, 205, 101);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Session Overview</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_10">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>38</y>
+           <width>259</width>
+           <height>1</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgb(52, 54, 58);
+    border: none;
+    max-height: 1px;
+}</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_SessionSetupIcon_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>21</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/folder-kanban.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_8">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Focus Time Today</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_10">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Sessions Today</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_11">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>10</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 10pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Total Points Earned Today</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StartSessionIcon_2">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>51</y>
+           <width>10</width>
+           <height>10</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: None;
+	background-color: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/circle-check.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_12">
+         <property name="geometry">
+          <rect>
+           <x>205</x>
+           <y>30</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>8</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Not studying</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_13">
+         <property name="geometry">
+          <rect>
+           <x>240</x>
+           <y>60</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>8</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>0 min</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_14">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>90</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>8</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>0 sessions</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StudyLabel_15">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>120</y>
+           <width>401</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Inter</family>
+           <pointsize>8</pointsize>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    font-family: &quot;Inter&quot;;
+    font-size: 8pt;
+    font-weight: 400;
+    color: rgb(135, 135, 145);
+    background-color: transparent;
+    border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_StartSessionIcon_3">
+         <property name="geometry">
+          <rect>
+           <x>260</x>
+           <y>141</y>
+           <width>10</width>
+           <height>10</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: None;
+	background-color: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/broccoli.svg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
     </widget>
    </widget>
   </widget>
