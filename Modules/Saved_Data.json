@@ -1,17 +1,17 @@
 {
-    "animation_index": 2,
-    "points": 204,
+    "animation_index": 1,
+    "points": 1,
     "username": "Jake",
-    "todaystudytime": 89,
-    "todaystudytime_seconds": 5342.761644363403,
-    "pointsearnedtoday": 12,
+    "todaystudytime": 2,
+    "todaystudytime_seconds": 120.0,
+    "pointsearnedtoday": 2,
     "currentstreak": 1,
-    "sessionstoday": 26,
-    "favoritesubject": "Physics",
-    "currentstage": "Full-Grown Tree",
-    "recentsubject": "Physics",
+    "sessionstoday": 2,
+    "favoritesubject": "Mathematics",
+    "currentstage": "Developing Sprout",
+    "recentsubject": "Physics ",
     "showdesktoppet": true,
-    "plantsize": "Medium",
+    "plantsize": "Large",
     "end_session": 0,
     "start_session": 1,
     "last_session_update": 0,
@@ -20,5 +20,19 @@
         8,
         11
     ],
-    "alwaysontop": true
+    "alwaysontop": true,
+    "last_daily_reset": [
+        2026,
+        8,
+        11
+    ],
+    "subject_study_time": {
+        "Mathematics": 1,
+        "Physics ": 1
+    },
+    "savedposition": [
+        1490,
+        789
+    ],
+    "rememberplantposition": false
 }

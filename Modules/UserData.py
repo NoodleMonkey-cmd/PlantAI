@@ -24,6 +24,11 @@ class Userdata:
         self.last_session_update = 0
         self.last_login = 0
         self.alwaysontop = 0
+        self.last_daily_reset = 0
+        self.subject_study_time = {}
+        self.savedposition = 0
+        self.rememberplantposition = 0
+
         self.load()
 
     def load(self):
@@ -62,6 +67,10 @@ class Userdata:
 
         self.last_login = data["last_login"]
         self.alwaysontop = data["alwaysontop"]
+        self.last_daily_reset = data["last_daily_reset"]
+        self.subject_study_time = data["subject_study_time"]
+        self.savedposition = data["savedposition"]
+        self.rememberplantposition = data["rememberplantposition"]
         return True
 
     def update_username(self, username):
@@ -120,7 +129,11 @@ class Userdata:
             "start_session": self.start_session,
             "last_session_update": self.last_session_update,
             "last_login": self.last_login,
-            "alwaysontop": self.alwaysontop
+            "alwaysontop": self.alwaysontop,
+            "last_daily_reset": self.last_daily_reset,
+            "subject_study_time": self.subject_study_time,
+            "savedposition": self.savedposition,
+            "rememberplantposition": self.rememberplantposition,
         })
 
         with open(SAVED_DATA_PATH, "w", encoding="utf-8") as file:

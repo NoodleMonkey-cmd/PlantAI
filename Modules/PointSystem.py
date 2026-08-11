@@ -1,5 +1,10 @@
-Sprout = [1, 200, 300]
-
+Sprout = [1, 20, 50]
+Sprout_Name = [
+    "Small Sprout",
+    "Developing Sprout",
+    "Pre-mature Sprout",
+    "Full-Grown Tree",
+]
 
 class PointSystem:
     def __init__(self):

@@ -1,9 +1,9 @@
 from Modules.Dragger import WindowDragger
-from Modules.PlantGrowth import Animation
-from Modules.PointSystem import PointSystem, Sprout
 from Modules.SavingSystem import SavingSystem
-from Modules.Asset_Loader import Sprout_animation
 from Modules.UserData import Userdata
+from Modules.PlantGrowth import Animation
+from Modules.PointSystem import PointSystem, Sprout, Sprout_Name
+from Modules.Asset_Loader import Sprout_animation
 
 from pathlib import Path
 from pygame._sdl2 import Window
@@ -22,6 +22,9 @@ display = pygame.display.set_mode((360, 450), pygame.NOFRAME)
 TRANSPARENT_COLOR = (255, 0, 255)
 display.fill(TRANSPARENT_COLOR)
 
+last_settings_check = 0
+tempcheck = True
+study_ui_process = None
 
 window = Window.from_display_module()
 # TRANSPARENT COLOR
@@ -43,9 +46,11 @@ user32.SetLayeredWindowAttributes(hwnd, transparent_color, 0, LMA_COLORKEY)
 
 dragger = WindowDragger(window)
 
-def AlwaysOnTop():
+def AlwaysOnTop(state):
+    order = (win32con.HWND_TOPMOST if state else win32con.HWND_NOTOPMOST)
+
     win32gui.SetWindowPos(
-        hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOMOVE | win32con.SWP_NOSIZE | win32con.SWP_NOACTIVATE
+        hwnd, order, 0, 0, 0, 0, win32con.SWP_NOMOVE | win32con.SWP_NOSIZE | win32con.SWP_NOACTIVATE
     )
 
 animation_handler = Animation()
@@ -60,14 +65,26 @@ userdata = Userdata()
 
 saving_system = SavingSystem(animation_handler, point_system, userdata)
 saving_system.load()
+userdata.currentstage = Sprout_Name[animation_handler.return_index()]
+
+userdata.load()
+RememberPlantPosition = userdata.rememberplantposition
+if RememberPlantPosition:
+    window.position = (userdata.savedposition[0], userdata.savedposition[1])
 
 running = True
 while running:
     saving_system.load_points()
+    current_ticks = pygame.time.get_ticks()
+    if current_ticks - last_settings_check >= 500:
+        userdata.load()
+
     current_point = userdata.points
     AlwaysOnTopOption = userdata.alwaysontop
+    ShowDesktopPlant = userdata.showdesktoppet
+    plantsize = userdata.plantsize
 
-    sprite_rect = animation_handler.return_rect()
+    sprite_rect = animation_handler.return_rect(plantsize)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -77,27 +94,40 @@ while running:
             dragger.start_dragging()
             plant_click_count = (plant_click_count + 1) % 5
             if not plant_click_count:
-                subprocess.Popen([sys.executable, study_ui_path])
+                if study_ui_process is None or study_ui_process.poll() is not None:
+                    study_ui_process = subprocess.Popen([sys.executable, study_ui_path])
 
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             dragger.stop_dragging()
 
+            x, y = window.position
+            userdata.savedposition = [x, y]
+            userdata.save()
+
     if not running:
         break
     dragger.update()
+
+
     display.fill(TRANSPARENT_COLOR)
-    animation_handler.update_display(display)
+
+    if ShowDesktopPlant:
+        animation_handler.update_display(display)
+    else:
+        if study_ui_process is None or study_ui_process.poll() is not None:
+            study_ui_process = subprocess.Popen([sys.executable, study_ui_path])
 
     growth_index = animation_handler.return_index()
     if 0 <= growth_index < len(Sprout) and point_system.points >= Sprout[growth_index]:
-        animation_handler.advance()
-    saving_system.save()
+        if animation_handler.advance():
+            userdata.currentstage = Sprout_Name[animation_handler.return_index()]
+            saving_system.save()
 
     pygame.display.flip()
 
     # ALWAYS ON TOP
-    if AlwaysOnTopOption:
-        AlwaysOnTop()
+    # print(AlwaysOnTopOption)
+    AlwaysOnTop(AlwaysOnTopOption)
 
     clock.tick(60)
 

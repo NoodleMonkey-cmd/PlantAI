@@ -7,15 +7,23 @@ from Modules.UserData import Userdata
 import time
 from datetime import datetime, date
 
+from Modules.PointSystem import Sprout, Sprout_Name
+
 userdata = Userdata()
 class StudyBloomWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui.setupUi(self)
+
+        self.drag_position = None
+        self.ui.TopFrane.installEventFilter(self)
 
         # Default Page
         self.ui.stackedWidget.setCurrentIndex(1)
+
+        self.CheckNewday()
 
         # Setting up
         self.ui.Label_Welcome.setText(f"Welcome, {userdata.username}")
@@ -52,6 +60,10 @@ class StudyBloomWindow(QMainWindow):
             self.UpdateAlwaysOnTopToggle
         )
 
+        self.ui.CheckBox_RememberPlantPosition.toggled.connect(
+            self.save_remember_plant_position
+        )
+
         self.ui.DropdownMenu_PlantSize.setCurrentText(userdata.plantsize)
         self.ui.DropdownMenu_PlantSize.currentTextChanged.connect(
             self.save_plant_size
@@ -82,11 +94,20 @@ class StudyBloomWindow(QMainWindow):
             self.StopTimer
         )
 
+        self.ui.Buttom_Close.clicked.connect(
+            self.close
+        )
+
+        self.ui.Button_Minimize.clicked.connect(
+            self.showMinimized
+        )
+
         # Toggles
 
         # Timer Integration
         self.session_timer = QTimer(self)
-        self.session_timer.setInterval(1000)
+        self.session_timer.setTimerType(Qt.TimerType.PreciseTimer)
+        self.session_timer.setInterval(100)
         self.session_timer.timeout.connect(self.UpdateTimer)
         self.UpdateTimer()
 
@@ -140,9 +161,11 @@ class StudyBloomWindow(QMainWindow):
             self.session_timer.stop()
 
             if userdata.end_session:
+                self.UpdateSubjectStats()
                 self.UpdateSession()
                 self.UpdateStreak()
                 self.UpdatePoints()
+                self.UpdateCurrentStage()
                 userdata.save(save_points=True)
 
                 self.ui.Label_CurrentStreakValue.setText(f"{userdata.currentstreak}")
@@ -234,6 +257,34 @@ class StudyBloomWindow(QMainWindow):
         userdata.last_login = [today.year, today.month, today.day]
         userdata.save()
 
+    def CheckNewday(self):
+        today = datetime.now().date()
+        today_list = [today.year, today.month, today.day]
+
+        if userdata.last_daily_reset != today_list:
+            userdata.last_daily_reset = today_list
+
+            userdata.sessionstoday = 0
+            userdata.pointsearnedtoday = 0
+            userdata.todaystudytime_Minutes = 0
+            userdata.todaystudytime_seconds = 0
+
+        userdata.save()
+
+    def UpdateSubjectStats(self):
+        subject = self.ui.comboBox_subject.currentText()
+        minutes = userdata.start_session
+
+        if subject not in userdata.subject_study_time:
+            userdata.subject_study_time[subject] = 0
+
+        userdata.recentsubject = subject
+        userdata.subject_study_time[subject] += minutes
+        userdata.favoritesubject = max(userdata.subject_study_time, key=userdata.subject_study_time.get)
+
+        self.ui.Label_Welcome_2.setText(userdata.favoritesubject)
+        self.ui.Label_Welcome_4.setText(userdata.recentsubject)
+
     def UpdatePoints(self):
         points_earned = userdata.start_session
         userdata.add_points(points_earned)
@@ -243,6 +294,17 @@ class StudyBloomWindow(QMainWindow):
 
     def UpdateAlwaysOnTopToggle(self, checked):
         userdata.alwaysontop = checked
+        userdata.save()
+
+    def UpdateCurrentStage(self):
+        stage_index = sum(
+            userdata.points >= required_points
+            for required_points in Sprout
+        )
+        stage_index = min(stage_index, len(Sprout_Name) - 1)
+        userdata.currentstage = Sprout_Name[stage_index]
+        self.ui.Label_Welcome_3.setText(f"{userdata.currentstage}")
+
         userdata.save()
 
     def save_username(self):
@@ -257,7 +319,25 @@ class StudyBloomWindow(QMainWindow):
         userdata.plantsize = plant_size
         userdata.save()
 
+    def save_remember_plant_position(self, checked):
+        userdata.rememberplantposition = checked
+        userdata.save()
 
+    def eventFilter(self, obj, event):
+        if obj == self.ui.TopFrane:
+
+            if event.type() == event.Type.MouseButtonPress:
+                if event.button() == Qt.LeftButton:
+                    self.drag_position = (event.globalPosition().toPoint() - self.frameGeometry().topLeft())
+
+            elif event.type() == event.Type.MouseMove:
+                if (event.buttons() & Qt.LeftButton and self.drag_position is not None):
+                    self.move(event.globalPosition().toPoint() - self.drag_position)
+
+            elif event.type() == event.Type.MouseButtonRelease:
+                self.drag_position = None
+
+        return super().eventFilter(obj, event)
 
 app = QApplication(sys.argv)
 

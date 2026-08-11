@@ -48,8 +48,8 @@ def scale_to_fit(sprite, max_size):
 
 
 Sprout_Animation_one = get_sprite(363, 185, 300, 135, Sprout_sheet)
-Sprout_Animation_two = get_sprite(361, 449, 303, 214, Sprout_sheet)
-Sprout_Animation_three = get_sprite(341, 718, 363, 336, Sprout_sheet)
-Sprout_Animation_four = get_sprite(306, 1073, 436, 336, Sprout_sheet)
+Sprout_Animation_two = get_sprite(363, 449, 299, 211, Sprout_sheet)
+Sprout_Animation_three = get_sprite(362, 753, 302, 271, Sprout_sheet)
+Sprout_Animation_four = get_sprite(310, 1089, 406, 316, Sprout_sheet)
 
 Sprout_animation = [Sprout_Animation_one, Sprout_Animation_two, Sprout_Animation_three, Sprout_Animation_four]

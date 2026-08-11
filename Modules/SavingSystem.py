@@ -73,6 +73,10 @@ class SavingSystem:
             "last_session_update": self.userdata.last_session_update,
             "last_login": self.userdata.last_login,
             "alwaysontop": self.userdata.alwaysontop,
+            "last_daily_reset": self.userdata.last_daily_reset,
+            "subject_study_time": self.userdata.subject_study_time,
+            "savedposition": self.userdata.savedposition,
+            "rememberplantposition": self.userdata.rememberplantposition,
         }
         try:
             json.dumps(data)
@@ -119,6 +123,10 @@ class SavingSystem:
         )
         last_login = data.get("last_login")
         alwaysontop = data.get("alwaysontop")
+        last_daily_reset = data.get("last_daily_reset")
+        subject_study_time = data.get("subject_study_time", {})
+        savedposition = data.get("savedposition", [])
+        rememberplantposition = data.get("rememberplantposition")
 
         if (isinstance(animation_index, bool) or not isinstance(animation_index, int)) or (
             isinstance(points, bool) or not isinstance(points, (int, float))
@@ -165,6 +173,10 @@ class SavingSystem:
         self.userdata.last_session_update = last_session_update
         self.userdata.last_login = last_login
         self.userdata.alwaysontop = alwaysontop
+        self.userdata.last_daily_reset = last_daily_reset
+        self.userdata.subject_study_time = subject_study_time
+        self.userdata.savedposition = savedposition
+        self.userdata.rememberplantposition = rememberplantposition
         return True
 
     def load_points(self):
