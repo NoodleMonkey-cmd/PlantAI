@@ -1,4 +1,4 @@
-Sprout = [100, 200, 300]
+Sprout = [1, 200, 300]
 
 
 class PointSystem:

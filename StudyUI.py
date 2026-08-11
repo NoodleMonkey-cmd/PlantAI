@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from ui_studybloom import Ui_MainWindow
 from Modules.UserData import Userdata
 import time
+from datetime import datetime, date
 
 userdata = Userdata()
 class StudyBloomWindow(QMainWindow):
@@ -44,6 +45,13 @@ class StudyBloomWindow(QMainWindow):
             self.save_show_desktop_pet
         )
 
+        self.ui.CheckBox_AlwaysOnTop.setChecked(
+            userdata.alwaysontop
+        )
+        self.ui.CheckBox_AlwaysOnTop.toggled.connect(
+            self.UpdateAlwaysOnTopToggle
+        )
+
         self.ui.DropdownMenu_PlantSize.setCurrentText(userdata.plantsize)
         self.ui.DropdownMenu_PlantSize.currentTextChanged.connect(
             self.save_plant_size
@@ -74,6 +82,8 @@ class StudyBloomWindow(QMainWindow):
             self.StopTimer
         )
 
+        # Toggles
+
         # Timer Integration
         self.session_timer = QTimer(self)
         self.session_timer.setInterval(1000)
@@ -102,7 +112,7 @@ class StudyBloomWindow(QMainWindow):
         for card, subheading, value in summary_cards:
             for label in (subheading, value):
                 geometry = label.geometry()
-                label.setGeometry(0, geometry.y(), card.width(), geometry.height())
+                label.setGeometry(0, geometry.y(), card.width()-7, geometry.height())
                 label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
     def UpdateTimer(self):
@@ -128,9 +138,18 @@ class StudyBloomWindow(QMainWindow):
         else:
             self.ui.Label_StudyLabel_12.setText("Not studying")
             self.session_timer.stop()
+
             if userdata.end_session:
+                self.UpdateSession()
+                self.UpdateStreak()
+                self.UpdatePoints()
+                userdata.save(save_points=True)
+
+                self.ui.Label_CurrentStreakValue.setText(f"{userdata.currentstreak}")
+
                 userdata.end_session = 0
                 userdata.last_session_update = 0
+
                 userdata.save()
 
     def record_elapsed_study_time(self, current_time):
@@ -188,6 +207,44 @@ class StudyBloomWindow(QMainWindow):
         userdata.save()
         self.UpdateTimer()
 
+    def UpdateSession(self):
+        userdata.sessionstoday += 1
+        userdata.save()
+
+        self.ui.Label_SessionTodayValue.setText(f"{userdata.sessionstoday}")
+        self.ui.Label_StudyLabel_14.setText(f"{userdata.sessionstoday} sessions")
+
+    def UpdateStreak(self):
+        today = datetime.now().date()
+
+        if userdata.last_login == [0, 0, 0]:
+            userdata.last_login = [today.year, today.month, today.day]
+            userdata.currentstreak = 1
+            userdata.save()
+            return
+
+        last_login = date(userdata.last_login[0], userdata.last_login[1], userdata.last_login[2])
+        day_passed = (today - last_login).days
+
+        if day_passed == 1:
+            userdata.currentstreak += 1
+        elif day_passed > 1:
+            userdata.currentstreak = 1
+
+        userdata.last_login = [today.year, today.month, today.day]
+        userdata.save()
+
+    def UpdatePoints(self):
+        points_earned = userdata.start_session
+        userdata.add_points(points_earned)
+
+        self.ui.Label_PointsEarnedValue.setText(f"{userdata.pointsearnedtoday}")
+        self.ui.Label_StudyLabel_15.setText(f"{userdata.pointsearnedtoday}")
+
+    def UpdateAlwaysOnTopToggle(self, checked):
+        userdata.alwaysontop = checked
+        userdata.save()
+
     def save_username(self):
         userdata.update_username(self.ui.Entry_Name.text())
         self.ui.Label_Welcome.setText(f"Welcome, {userdata.username}")
@@ -199,6 +256,8 @@ class StudyBloomWindow(QMainWindow):
     def save_plant_size(self, plant_size):
         userdata.plantsize = plant_size
         userdata.save()
+
+
 
 app = QApplication(sys.argv)
 

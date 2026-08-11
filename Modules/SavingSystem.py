@@ -17,6 +17,7 @@ class SavingSystem:
         last_session_update = self.userdata.last_session_update
         todaystudytime = self.userdata.todaystudytime_Minutes
         todaystudytime_seconds = self.userdata.todaystudytime_seconds
+        points = self.point_system.points
         if SAVED_DATA_PATH.is_file():
             try:
                 with open(SAVED_DATA_PATH, "r", encoding="utf-8") as file:
@@ -35,6 +36,12 @@ class SavingSystem:
                     todaystudytime = saved_data["todaystudytime"]
                 if isinstance(saved_data, dict) and isinstance(saved_data.get("todaystudytime_seconds"), (int, float)):
                     todaystudytime_seconds = saved_data["todaystudytime_seconds"]
+                if (
+                    isinstance(saved_data, dict)
+                    and not isinstance(saved_data.get("points"), bool)
+                    and isinstance(saved_data.get("points"), (int, float))
+                ):
+                    points = max(points, saved_data["points"])
             except json.JSONDecodeError:
                 pass
 
@@ -45,9 +52,11 @@ class SavingSystem:
         self.userdata.last_session_update = last_session_update
         self.userdata.todaystudytime_Minutes = todaystudytime
         self.userdata.todaystudytime_seconds = todaystudytime_seconds
+        self.point_system.points = points
+        self.userdata.points = points
         data = {
             "animation_index": self.animation_handler.Animation_index,
-            "points": self.point_system.points,
+            "points": points,
             "username": self.userdata.username,
             "todaystudytime": self.userdata.todaystudytime_Minutes,
             "todaystudytime_seconds": self.userdata.todaystudytime_seconds,
@@ -62,6 +71,8 @@ class SavingSystem:
             "end_session": self.userdata.end_session,
             "start_session": self.userdata.start_session,
             "last_session_update": self.userdata.last_session_update,
+            "last_login": self.userdata.last_login,
+            "alwaysontop": self.userdata.alwaysontop,
         }
         try:
             json.dumps(data)
@@ -106,6 +117,8 @@ class SavingSystem:
             "last_session_update",
             self.userdata.last_session_update,
         )
+        last_login = data.get("last_login")
+        alwaysontop = data.get("alwaysontop")
 
         if (isinstance(animation_index, bool) or not isinstance(animation_index, int)) or (
             isinstance(points, bool) or not isinstance(points, (int, float))
@@ -135,6 +148,7 @@ class SavingSystem:
 
         self.animation_handler.Animation_index = animation_index
         self.point_system.points = points
+        self.userdata.points = points
         self.userdata.username = username
         self.userdata.todaystudytime_Minutes = todaystudytime
         self.userdata.todaystudytime_seconds = todaystudytime_seconds
@@ -149,4 +163,27 @@ class SavingSystem:
         self.userdata.end_session = end_session
         self.userdata.start_session = start_session
         self.userdata.last_session_update = last_session_update
+        self.userdata.last_login = last_login
+        self.userdata.alwaysontop = alwaysontop
+        return True
+
+    def load_points(self):
+        if not SAVED_DATA_PATH.is_file():
+            return False
+        try:
+            with open(SAVED_DATA_PATH, "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except json.JSONDecodeError:
+            return False
+
+        saved_points = data.get("points") if isinstance(data, dict) else None
+        if (
+            isinstance(saved_points, bool)
+            or not isinstance(saved_points, (int, float))
+            or saved_points < 0
+        ):
+            return False
+
+        self.point_system.points = max(self.point_system.points, saved_points)
+        self.userdata.points = self.point_system.points
         return True
