@@ -1066,6 +1066,21 @@ QComboBox QAbstractItemView {
     selection-color: rgb(240, 240, 240);
 }</string>
          </property>
+         <item>
+          <property name="text">
+           <string>Small</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Medium</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Large</string>
+          </property>
+         </item>
         </widget>
        </widget>
       </widget>
@@ -2233,45 +2248,70 @@ QComboBox QAbstractItemView {
          </property>
          <property name="styleSheet">
           <string notr="true">QComboBox {
-    background-color: rgb(23, 25, 30);
-    color: rgb(225, 227, 232);
-
-    border: 1px solid rgb(48, 51, 58);
+    background-color: rgb(25, 26, 28);
+    border: 1px solid rgb(58, 60, 64);
     border-radius: 8px;
 
-    padding: 7px 12px;
+    color: rgb(225, 225, 230);
 
     font-family: &quot;Inter&quot;;
-    font-size: 11pt;
-    font-weight: 400;
+    font-size: 10pt;
+
+    padding: 6px 10px;
 }
 
 QComboBox:hover {
-    border: 1px solid rgb(65, 69, 76);
+    border: 1px solid rgb(90, 95, 100);
 }
 
 QComboBox:focus {
     border: 1px solid rgb(137, 205, 101);
 }
 
-QComboBox::drop-down {
-    border: none;
-    width: 30px;
-}
-
 QComboBox QAbstractItemView {
-    background-color: rgb(27, 29, 34);
-    color: rgb(225, 227, 232);
+    background-color: rgb(31, 32, 35);
+    color: rgb(225, 225, 230);
 
-    border: 1px solid rgb(48, 51, 58);
-    outline: none;
-
-    selection-background-color: rgb(42, 55, 40);
-    selection-color: rgb(137, 205, 101);
-
-    padding: 5px;
+    border: 1px solid rgb(58, 60, 64);
+    selection-background-color: rgb(55, 72, 52);
+    selection-color: rgb(240, 240, 240);
 }</string>
          </property>
+         <item>
+          <property name="text">
+           <string>Mathematics</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Physics </string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Chemistry</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Language</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Geography</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>History</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Computer Science</string>
+          </property>
+         </item>
         </widget>
         <widget class="QLabel" name="Label_StudyLabel_3">
          <property name="geometry">
@@ -2315,31 +2355,25 @@ QComboBox QAbstractItemView {
          </property>
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-    background-color: rgb(23, 25, 30);
-    color: rgb(225, 227, 232);
-
-    border: 1px solid rgb(48, 51, 58);
+    background-color: rgb(25, 26, 28);
+    border: 1px solid rgb(58, 60, 64);
     border-radius: 8px;
 
-    padding: 7px 12px;
+    color: rgb(225, 225, 230);
 
     font-family: &quot;Inter&quot;;
-    font-size: 11pt;
-    font-weight: 400;
-}
+    font-size: 10pt;
 
-QLineEdit:hover {
-    border: 1px solid rgb(65, 69, 76);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 QLineEdit:focus {
     border: 1px solid rgb(137, 205, 101);
-}
-
-QLineEdit:disabled {
-    color: rgb(110, 113, 120);
-    background-color: rgb(27, 29, 33);
 }</string>
+         </property>
+         <property name="text">
+          <string/>
          </property>
         </widget>
        </widget>
@@ -2349,7 +2383,7 @@ QLineEdit:disabled {
           <x>310</x>
           <y>80</y>
           <width>321</width>
-          <height>261</height>
+          <height>321</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -2669,6 +2703,69 @@ QPushButton:disabled {
          </property>
          <property name="pixmap">
           <pixmap>Modules/Assets/Icon/rotate-ccw2.svg</pixmap>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="Button_RestartSession_2">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>260</y>
+           <width>191</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgb(205, 82, 82);
+    color: rgb(255, 245, 245);
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: &quot;Inter&quot;;
+    font-size: 11pt;
+    font-weight: 600;
+
+    padding: 10px 20px;
+}
+
+QPushButton:hover {
+    background-color: rgb(220, 95, 95);
+}
+
+QPushButton:pressed {
+    background-color: rgb(175, 65, 65);
+}
+
+QPushButton:disabled {
+    background-color: rgb(75, 55, 55);
+    color: rgb(135, 115, 115);
+}</string>
+         </property>
+         <property name="text">
+          <string>  Stop</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Label_RestartSessionIcon_2">
+         <property name="geometry">
+          <rect>
+           <x>125</x>
+           <y>271</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: None;
+	background-color: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>Modules/Assets/Icon/octagon-x.svg</pixmap>
          </property>
         </widget>
        </widget>

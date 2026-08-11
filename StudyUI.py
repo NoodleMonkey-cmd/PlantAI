@@ -1,7 +1,10 @@
 import sys
+import math
+from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import QApplication, QMainWindow
 from ui_studybloom import Ui_MainWindow
 from Modules.UserData import Userdata
+import time
 
 userdata = Userdata()
 class StudyBloomWindow(QMainWindow):
@@ -18,13 +21,7 @@ class StudyBloomWindow(QMainWindow):
         self.ui.Entry_Name.setText(userdata.username)
         self.ui.Entry_Name.editingFinished.connect(self.save_username)
 
-        TodayStudyTime_Minutes = userdata.todaystudytime_Minutes
-        if TodayStudyTime_Minutes < 60:
-            self.ui.Label_StudyTimeValue.setText(f"{TodayStudyTime_Minutes}min")
-        elif TodayStudyTime_Minutes >= 60:
-            hr = TodayStudyTime_Minutes // 60
-            minu = TodayStudyTime_Minutes - (60 * hr)
-            self.ui.Label_StudyTimeValue.setText(f"{hr}h {minu}")
+        self.update_study_time_display()
 
         self.ui.Label_PointsEarnedValue.setText(f"{userdata.pointsearnedtoday}")
         self.ui.Label_StudyLabel_15.setText(f"{userdata.pointsearnedtoday}")
@@ -40,9 +37,16 @@ class StudyBloomWindow(QMainWindow):
 
         self.ui.Label_Welcome_4.setText(f"{userdata.recentsubject}")
 
+        self.center_summary_card_text()
+
         self.ui.CheckBox_ShowDesktopPlant.setChecked(userdata.showdesktoppet)
         self.ui.CheckBox_ShowDesktopPlant.toggled.connect(
             self.save_show_desktop_pet
+        )
+
+        self.ui.DropdownMenu_PlantSize.setCurrentText(userdata.plantsize)
+        self.ui.DropdownMenu_PlantSize.currentTextChanged.connect(
+            self.save_plant_size
         )
 
         # Buttons
@@ -58,12 +62,142 @@ class StudyBloomWindow(QMainWindow):
             lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Page_Study)
         )
 
+        self.ui.Button_StartSession.clicked.connect(
+            self.StartTimer
+        )
+
+        self.ui.Button_RestartSession.clicked.connect(
+            self.StartTimer
+        )
+
+        self.ui.Button_RestartSession_2.clicked.connect(
+            self.StopTimer
+        )
+
+        # Timer Integration
+        self.session_timer = QTimer(self)
+        self.session_timer.setInterval(1000)
+        self.session_timer.timeout.connect(self.UpdateTimer)
+        self.UpdateTimer()
+
+    def center_summary_card_text(self):
+        summary_cards = (
+            (
+                self.ui.Frame_FavoriteSubject,
+                self.ui.Label_SubText_9,
+                self.ui.Label_Welcome_2,
+            ),
+            (
+                self.ui.Framel_CurrentFlowerStage,
+                self.ui.Label_SubText_11,
+                self.ui.Label_Welcome_3,
+            ),
+            (
+                self.ui.Frame_RecentSession,
+                self.ui.Label_SubText_13,
+                self.ui.Label_Welcome_4,
+            ),
+        )
+
+        for card, subheading, value in summary_cards:
+            for label in (subheading, value):
+                geometry = label.geometry()
+                label.setGeometry(0, geometry.y(), card.width(), geometry.height())
+                label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+    def UpdateTimer(self):
+        current_time = time.time()
+        self.record_elapsed_study_time(current_time)
+
+        remaining_seconds = max(0, math.ceil(userdata.end_session - time.time()))
+
+        hours, remaining_seconds = divmod(remaining_seconds, 3600)
+        minutes, seconds = divmod(remaining_seconds, 60)
+
+        self.ui.Label_Hour.setText(f"{hours:02}:")
+        self.ui.Label_Minute.setText(f"{minutes:02}:")
+        self.ui.Label_Second.setText(f"{seconds:02}")
+
+        self.update_study_time_display()
+
+        if userdata.end_session > current_time:
+            self.ui.Label_StudyLabel_12.setText("Studying")
+            if not self.session_timer.isActive():
+                self.session_timer.start()
+            userdata.save()
+        else:
+            self.ui.Label_StudyLabel_12.setText("Not studying")
+            self.session_timer.stop()
+            if userdata.end_session:
+                userdata.end_session = 0
+                userdata.last_session_update = 0
+                userdata.save()
+
+    def record_elapsed_study_time(self, current_time):
+        if not userdata.end_session or not userdata.last_session_update:
+            return
+
+        count_until = min(current_time, userdata.end_session)
+        elapsed_seconds = max(0, count_until - userdata.last_session_update)
+        userdata.todaystudytime_seconds += elapsed_seconds
+        userdata.todaystudytime_Minutes = int(
+            userdata.todaystudytime_seconds // 60
+        )
+        userdata.last_session_update = count_until
+
+    def update_study_time_display(self):
+        total_minutes = int(userdata.todaystudytime_seconds // 60)
+        userdata.todaystudytime_Minutes = total_minutes
+        hours, minutes = divmod(total_minutes, 60)
+
+        if hours:
+            self.ui.Label_StudyTimeValue.setText(f"{hours}h {minutes}")
+        else:
+            self.ui.Label_StudyTimeValue.setText(f"{minutes}min")
+
+        self.ui.Label_StudyLabel_13.setText(f"{total_minutes} min")
+
+    def StartTimer(self):
+        try:
+            session_length_minutes = int(self.ui.Lineedit_SessionLength.text())
+        except ValueError:
+            return
+
+        if session_length_minutes <= 0:
+            return
+
+        current_time = time.time()
+        self.record_elapsed_study_time(current_time)
+
+        userdata.start_session = session_length_minutes
+        userdata.end_session = current_time + (session_length_minutes * 60)
+        userdata.last_session_update = current_time
+        userdata.save()
+
+        minute_label = "minute" if session_length_minutes == 1 else "minutes"
+        self.ui.Label_SmallTimeLimit.setText(
+            f"{session_length_minutes} {minute_label}"
+        )
+        self.UpdateTimer()
+
+    def StopTimer(self):
+        self.record_elapsed_study_time(time.time())
+        self.session_timer.stop()
+        userdata.end_session = 0
+        userdata.last_session_update = 0
+        userdata.save()
+        self.UpdateTimer()
+
     def save_username(self):
         userdata.update_username(self.ui.Entry_Name.text())
         self.ui.Label_Welcome.setText(f"Welcome, {userdata.username}")
 
     def save_show_desktop_pet(self, checked):
         userdata.showdesktoppet = checked
+        userdata.save()
+
+    def save_plant_size(self, plant_size):
+        userdata.plantsize = plant_size
         userdata.save()
 
 app = QApplication(sys.argv)

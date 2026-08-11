@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
     QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QWidget)
+    QSizePolicy, QStackedWidget, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -425,6 +425,7 @@ class Ui_MainWindow(object):
 "QCheckBox::indicator:checked {\n"
 "    background-color: rgb(137, 205, 101);\n"
 "}")
+        self.CheckBox_ShowDesktopPlant.setChecked(False)
         self.CheckBox_AlwaysOnTop = QCheckBox(self.Frame_Profile_2)
         self.CheckBox_AlwaysOnTop.setObjectName(u"CheckBox_AlwaysOnTop")
         self.CheckBox_AlwaysOnTop.setGeometry(QRect(560, 95, 84, 24))
@@ -464,6 +465,9 @@ class Ui_MainWindow(object):
 "    background-color: rgb(137, 205, 101);\n"
 "}")
         self.DropdownMenu_PlantSize = QComboBox(self.Frame_Profile_2)
+        self.DropdownMenu_PlantSize.addItem("")
+        self.DropdownMenu_PlantSize.addItem("")
+        self.DropdownMenu_PlantSize.addItem("")
         self.DropdownMenu_PlantSize.setObjectName(u"DropdownMenu_PlantSize")
         self.DropdownMenu_PlantSize.setGeometry(QRect(515, 165, 89, 26))
         self.DropdownMenu_PlantSize.setStyleSheet(u"QComboBox {\n"
@@ -1012,46 +1016,43 @@ class Ui_MainWindow(object):
 "    border: none;\n"
 "}")
         self.comboBox_subject = QComboBox(self.Frame_StudySession)
+        self.comboBox_subject.addItem("")
+        self.comboBox_subject.addItem("")
+        self.comboBox_subject.addItem("")
+        self.comboBox_subject.addItem("")
+        self.comboBox_subject.addItem("")
+        self.comboBox_subject.addItem("")
+        self.comboBox_subject.addItem("")
         self.comboBox_subject.setObjectName(u"comboBox_subject")
         self.comboBox_subject.setGeometry(QRect(10, 70, 211, 26))
         self.comboBox_subject.setStyleSheet(u"QComboBox {\n"
-"    background-color: rgb(23, 25, 30);\n"
-"    color: rgb(225, 227, 232);\n"
-"\n"
-"    border: 1px solid rgb(48, 51, 58);\n"
+"    background-color: rgb(25, 26, 28);\n"
+"    border: 1px solid rgb(58, 60, 64);\n"
 "    border-radius: 8px;\n"
 "\n"
-"    padding: 7px 12px;\n"
+"    color: rgb(225, 225, 230);\n"
 "\n"
 "    font-family: \"Inter\";\n"
-"    font-size: 11pt;\n"
-"    font-weight: 400;\n"
+"    font-size: 10pt;\n"
+"\n"
+"    padding: 6px 10px;\n"
 "}\n"
 "\n"
 "QComboBox:hover {\n"
-"    border: 1px solid rgb(65, 69, 76);\n"
+"    border: 1px solid rgb(90, 95, 100);\n"
 "}\n"
 "\n"
 "QComboBox:focus {\n"
 "    border: 1px solid rgb(137, 205, 101);\n"
 "}\n"
 "\n"
-"QComboBox::drop-down {\n"
-"    border: none;\n"
-"    width: 30px;\n"
-"}\n"
-"\n"
 "QComboBox QAbstractItemView {\n"
-"    background-color: rgb(27, 29, 34);\n"
-"    color: rgb(225, 227, 232);\n"
+"    background-color: rgb(31, 32, 35);\n"
+"    color: rgb(225, 225, 230);\n"
 "\n"
-"    border: 1px solid rgb(48, 51, 58);\n"
-"    outline: none;\n"
-"\n"
-"    selection-background-color: rgb(42, 55, 40);\n"
-"    selection-color: rgb(137, 205, 101);\n"
-"\n"
-"    padding: 5px;\n"
+"    border: 1px solid rgb(58, 60, 64);\n"
+"    selection-background-color: rgb(55, 72, 52);\n"
+"    selection-color: rgb(240, 240, 240);\n"
 "}")
         self.Label_StudyLabel_3 = QLabel(self.Frame_StudySession)
         self.Label_StudyLabel_3.setObjectName(u"Label_StudyLabel_3")
@@ -1069,34 +1070,25 @@ class Ui_MainWindow(object):
         self.Lineedit_SessionLength.setObjectName(u"Lineedit_SessionLength")
         self.Lineedit_SessionLength.setGeometry(QRect(10, 130, 211, 26))
         self.Lineedit_SessionLength.setStyleSheet(u"QLineEdit {\n"
-"    background-color: rgb(23, 25, 30);\n"
-"    color: rgb(225, 227, 232);\n"
-"\n"
-"    border: 1px solid rgb(48, 51, 58);\n"
+"    background-color: rgb(25, 26, 28);\n"
+"    border: 1px solid rgb(58, 60, 64);\n"
 "    border-radius: 8px;\n"
 "\n"
-"    padding: 7px 12px;\n"
+"    color: rgb(225, 225, 230);\n"
 "\n"
 "    font-family: \"Inter\";\n"
-"    font-size: 11pt;\n"
-"    font-weight: 400;\n"
-"}\n"
+"    font-size: 10pt;\n"
 "\n"
-"QLineEdit:hover {\n"
-"    border: 1px solid rgb(65, 69, 76);\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
 "    border: 1px solid rgb(137, 205, 101);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"    color: rgb(110, 113, 120);\n"
-"    background-color: rgb(27, 29, 33);\n"
 "}")
         self.Frame_Timer = QFrame(self.MainFrame_3)
         self.Frame_Timer.setObjectName(u"Frame_Timer")
-        self.Frame_Timer.setGeometry(QRect(310, 80, 321, 261))
+        self.Frame_Timer.setGeometry(QRect(310, 80, 321, 321))
         self.Frame_Timer.setStyleSheet(u"QFrame {\n"
 "    background-color: rgb(27, 29, 34);\n"
 "    border: 1px solid rgb(45, 48, 55);\n"
@@ -1252,6 +1244,43 @@ class Ui_MainWindow(object):
 "	background-color: transparent;\n"
 "}")
         self.Label_RestartSessionIcon.setPixmap(QPixmap(u"Modules/Assets/Icon/rotate-ccw2.svg"))
+        self.Button_RestartSession_2 = QPushButton(self.Frame_Timer)
+        self.Button_RestartSession_2.setObjectName(u"Button_RestartSession_2")
+        self.Button_RestartSession_2.setGeometry(QRect(70, 260, 191, 41))
+        self.Button_RestartSession_2.setStyleSheet(u"QPushButton {\n"
+"    background-color: rgb(205, 82, 82);\n"
+"    color: rgb(255, 245, 245);\n"
+"\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"\n"
+"    font-family: \"Inter\";\n"
+"    font-size: 11pt;\n"
+"    font-weight: 600;\n"
+"\n"
+"    padding: 10px 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(220, 95, 95);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(175, 65, 65);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: rgb(75, 55, 55);\n"
+"    color: rgb(135, 115, 115);\n"
+"}")
+        self.Label_RestartSessionIcon_2 = QLabel(self.Frame_Timer)
+        self.Label_RestartSessionIcon_2.setObjectName(u"Label_RestartSessionIcon_2")
+        self.Label_RestartSessionIcon_2.setGeometry(QRect(125, 271, 41, 21))
+        self.Label_RestartSessionIcon_2.setStyleSheet(u"QLabel {\n"
+"	border: None;\n"
+"	background-color: transparent;\n"
+"}")
+        self.Label_RestartSessionIcon_2.setPixmap(QPixmap(u"Modules/Assets/Icon/octagon-x.svg"))
         self.Frame_SessionOverview = QFrame(self.MainFrame_3)
         self.Frame_SessionOverview.setObjectName(u"Frame_SessionOverview")
         self.Frame_SessionOverview.setGeometry(QRect(10, 280, 281, 201))
@@ -1405,6 +1434,9 @@ class Ui_MainWindow(object):
         self.Label_StartSessionIcon_3.setScaledContents(True)
         self.stackedWidget.addWidget(self.Page_Study)
         MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
 
@@ -1442,6 +1474,10 @@ class Ui_MainWindow(object):
         self.CheckBox_ShowDesktopPlant.setText("")
         self.CheckBox_AlwaysOnTop.setText("")
         self.CheckBox_RememberPlantPosition.setText("")
+        self.DropdownMenu_PlantSize.setItemText(0, QCoreApplication.translate("MainWindow", u"Small", None))
+        self.DropdownMenu_PlantSize.setItemText(1, QCoreApplication.translate("MainWindow", u"Medium", None))
+        self.DropdownMenu_PlantSize.setItemText(2, QCoreApplication.translate("MainWindow", u"Large", None))
+
         self.Label_Welcome.setText(QCoreApplication.translate("MainWindow", u"Welcome, Jake", None))
         self.Label_SummaryText.setText(QCoreApplication.translate("MainWindow", u"Here's your study summary for today", None))
         self.Label_Subtext.setText(QCoreApplication.translate("MainWindow", u"Today's Study Time", None))
@@ -1470,7 +1506,16 @@ class Ui_MainWindow(object):
         self.label_SessionSetupIcon.setText("")
         self.label_SessionSetupText.setText(QCoreApplication.translate("MainWindow", u"Session Setup", None))
         self.Label_StudyLabel_2.setText(QCoreApplication.translate("MainWindow", u"Subject:", None))
+        self.comboBox_subject.setItemText(0, QCoreApplication.translate("MainWindow", u"Mathematics", None))
+        self.comboBox_subject.setItemText(1, QCoreApplication.translate("MainWindow", u"Physics ", None))
+        self.comboBox_subject.setItemText(2, QCoreApplication.translate("MainWindow", u"Chemistry", None))
+        self.comboBox_subject.setItemText(3, QCoreApplication.translate("MainWindow", u"Language", None))
+        self.comboBox_subject.setItemText(4, QCoreApplication.translate("MainWindow", u"Geography", None))
+        self.comboBox_subject.setItemText(5, QCoreApplication.translate("MainWindow", u"History", None))
+        self.comboBox_subject.setItemText(6, QCoreApplication.translate("MainWindow", u"Computer Science", None))
+
         self.Label_StudyLabel_3.setText(QCoreApplication.translate("MainWindow", u"Session Length:", None))
+        self.Lineedit_SessionLength.setText("")
         self.label_SessionSetupIcon_3.setText("")
         self.label_SessionSetupText_3.setText(QCoreApplication.translate("MainWindow", u"Timer", None))
         self.Label_Hour.setText(QCoreApplication.translate("MainWindow", u"00:", None))
@@ -1481,6 +1526,8 @@ class Ui_MainWindow(object):
         self.Label_StartSessionIcon.setText("")
         self.Button_RestartSession.setText(QCoreApplication.translate("MainWindow", u"   Restart", None))
         self.Label_RestartSessionIcon.setText("")
+        self.Button_RestartSession_2.setText(QCoreApplication.translate("MainWindow", u"  Stop", None))
+        self.Label_RestartSessionIcon_2.setText("")
         self.label_SessionSetupText_5.setText(QCoreApplication.translate("MainWindow", u"Session Overview", None))
         self.label_SessionSetupIcon_5.setText("")
         self.Label_StudyLabel_8.setText(QCoreApplication.translate("MainWindow", u"Status", None))

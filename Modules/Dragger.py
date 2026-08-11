@@ -33,3 +33,4 @@ class WindowDragger:
                 global_mouse_x - self.offset[0],
                 global_mouse_y - self.offset[1],
             )
+
