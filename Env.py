@@ -6,6 +6,7 @@ from Modules.PointSystem import PointSystem, Sprout, Sprout_Name
 from Modules.Asset_Loader import Sprout_animation, SessionComplete
 from Modules.Particles import Particle
 
+from pyautogui import prompt
 from pathlib import Path
 from pygame._sdl2 import Window
 import pygame, subprocess, sys
@@ -83,6 +84,11 @@ prev_point = userdata.points
 
 previous_session_count = userdata.sessionstoday
 session_complete_until = 0
+
+if userdata.username == "":
+    x = prompt(title="Welcome!", text="What is your username?")
+    userdata.username = x
+    userdata.save()
 
 running = True
 while running:

@@ -1,24 +1,24 @@
 {
-    "animation_index": 1,
-    "points": 4,
+    "animation_index": 0,
+    "points": 0,
     "username": "Jake",
-    "todaystudytime": 28,
-    "todaystudytime_seconds": 1693.2224407196045,
-    "pointsearnedtoday": 3,
-    "currentstreak": 2,
-    "sessionstoday": 3,
-    "favoritesubject": "Mathematics",
-    "currentstage": "Developing Sprout",
-    "recentsubject": "Mathematics",
+    "todaystudytime": 0,
+    "todaystudytime_seconds": 0,
+    "pointsearnedtoday": 0,
+    "currentstreak": 0,
+    "sessionstoday": 0,
+    "favoritesubject": "Not Known",
+    "currentstage": "Small Sprout",
+    "recentsubject": "Not Known",
     "showdesktoppet": true,
     "plantsize": "Medium",
     "end_session": 0,
-    "start_session": 1,
+    "start_session": 0,
     "last_session_update": 0,
     "last_login": [
-        2026,
-        8,
-        12
+        0,
+        0,
+        0
     ],
     "alwaysontop": true,
     "last_daily_reset": [
@@ -26,13 +26,10 @@
         8,
         12
     ],
-    "subject_study_time": {
-        "Mathematics": 4,
-        "Physics ": 1
-    },
+    "subject_study_time": {},
     "savedposition": [
-        1559,
-        782
+        3433,
+        1922
     ],
     "rememberplantposition": true
 }
