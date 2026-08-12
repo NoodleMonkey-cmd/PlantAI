@@ -6,6 +6,17 @@ from ui_studybloom import Ui_MainWindow
 from Modules.UserData import Userdata
 import time
 from datetime import datetime, date
+import pygame
+
+pygame.init()
+pygame.mixer.init()
+
+click_effect = pygame.mixer.Sound("Modules/Assets/SoundEffect/universfield-computer-mouse-click-352734.mp3")
+toggle_on = pygame.mixer.Sound("Modules/Assets/SoundEffect/milanwulf-toggle-button-on-166329.mp3")
+toggle_off = pygame.mixer.Sound("Modules/Assets/SoundEffect/milanwulf-toggle-button-off-166328.mp3")
+key_press = pygame.mixer.Sound("Modules/Assets/SoundEffect/KeyPress.mp3")
+timer_start = pygame.mixer.Sound("Modules/Assets/SoundEffect/Engage.mp3")
+timer_stop = pygame.mixer.Sound("Modules/Assets/SoundEffect/Disengage.mp3")
 
 from Modules.PointSystem import Sprout, Sprout_Name
 
@@ -29,6 +40,9 @@ class StudyBloomWindow(QMainWindow):
         self.ui.Label_Welcome.setText(f"Welcome, {userdata.username}")
         self.ui.Entry_Name.setText(userdata.username)
         self.ui.Entry_Name.editingFinished.connect(self.save_username)
+
+        self.ui.Entry_Name.textEdited.connect(lambda: key_press.play())
+        self.ui.Lineedit_SessionLength.textEdited.connect(lambda: key_press.play())
 
         self.update_study_time_display()
 
@@ -60,6 +74,7 @@ class StudyBloomWindow(QMainWindow):
             self.UpdateAlwaysOnTopToggle
         )
 
+        self.ui.CheckBox_RememberPlantPosition.setChecked(userdata.rememberplantposition)
         self.ui.CheckBox_RememberPlantPosition.toggled.connect(
             self.save_remember_plant_position
         )
@@ -71,29 +86,36 @@ class StudyBloomWindow(QMainWindow):
 
         # Buttons
         self.ui.Button_Setting.clicked.connect(
-            lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Page_Settings)
+            lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Page_Settings),
         )
+        self.ui.Button_Setting.clicked.connect(click_effect.play)
 
         self.ui.Button_Summary.clicked.connect(
             lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Page_Summary)
         )
+        self.ui.Button_Summary.clicked.connect(click_effect.play)
 
         self.ui.Button_Study.clicked.connect(
             lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Page_Study)
         )
+        self.ui.Button_Study.clicked.connect(click_effect.play)
 
         self.ui.Button_StartSession.clicked.connect(
             self.StartTimer
         )
+        self.ui.Button_StartSession.clicked.connect(timer_start.play)
 
         self.ui.Button_RestartSession.clicked.connect(
             self.StartTimer
         )
+        self.ui.Button_RestartSession.clicked.connect(click_effect.play)
 
         self.ui.Button_RestartSession_2.clicked.connect(
             self.StopTimer
         )
+        self.ui.Button_RestartSession_2.clicked.connect(timer_stop.play)
 
+        self.ui.Buttom_Close.clicked.connect(click_effect.play)
         self.ui.Buttom_Close.clicked.connect(
             self.close
         )
@@ -101,8 +123,7 @@ class StudyBloomWindow(QMainWindow):
         self.ui.Button_Minimize.clicked.connect(
             self.showMinimized
         )
-
-        # Toggles
+        self.ui.Button_Minimize.clicked.connect(click_effect.play)
 
         # Timer Integration
         self.session_timer = QTimer(self)
@@ -293,6 +314,10 @@ class StudyBloomWindow(QMainWindow):
         self.ui.Label_StudyLabel_15.setText(f"{userdata.pointsearnedtoday}")
 
     def UpdateAlwaysOnTopToggle(self, checked):
+        if checked:
+            toggle_on.play()
+        else:
+            toggle_off.play()
         userdata.alwaysontop = checked
         userdata.save()
 
@@ -312,6 +337,10 @@ class StudyBloomWindow(QMainWindow):
         self.ui.Label_Welcome.setText(f"Welcome, {userdata.username}")
 
     def save_show_desktop_pet(self, checked):
+        if checked:
+            toggle_on.play()
+        else:
+            toggle_off.play()
         userdata.showdesktoppet = checked
         userdata.save()
 
@@ -320,6 +349,10 @@ class StudyBloomWindow(QMainWindow):
         userdata.save()
 
     def save_remember_plant_position(self, checked):
+        if checked:
+            toggle_on.play()
+        else:
+            toggle_off.play()
         userdata.rememberplantposition = checked
         userdata.save()
 

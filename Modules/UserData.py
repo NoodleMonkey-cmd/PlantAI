@@ -27,7 +27,7 @@ class Userdata:
         self.last_daily_reset = 0
         self.subject_study_time = {}
         self.savedposition = 0
-        self.rememberplantposition = 0
+        self.rememberplantposition = [100, 100]
 
         self.load()
 

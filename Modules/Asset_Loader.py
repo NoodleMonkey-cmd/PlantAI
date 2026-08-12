@@ -2,6 +2,7 @@ import pygame
 from pathlib import Path
 
 SPRITE_PATH = Path(__file__).resolve().parent / "Assets" / "Sprout.png"
+SessionComplete = Path(__file__).resolve().parent / "Assets" / "SessionComplete.png"
 if not SPRITE_PATH.is_file():
     raise FileNotFoundError(f"Sprout sprite sheet not found: {SPRITE_PATH}")
 
@@ -46,6 +47,8 @@ def scale_to_fit(sprite, max_size):
         ),
     )
 
+
+SessionComplete = remove_partial_alpha(scale_to_fit(pygame.image.load(str(SessionComplete)), (200, 200)))
 
 Sprout_Animation_one = get_sprite(363, 185, 300, 135, Sprout_sheet)
 Sprout_Animation_two = get_sprite(363, 449, 299, 211, Sprout_sheet)
